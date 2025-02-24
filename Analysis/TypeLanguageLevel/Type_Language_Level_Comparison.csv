@@ -1,0 +1,161 @@
+Model,Language,Code Smell,True Positives (TP),False Positives (FP),False Negatives (FN),Precision,Recall,F1-score
+GPT-4,Python,Large Class,4,1,1,0.8,0.8,0.8000000000000002
+DeepSeek,Python,Large Class,0,5,5,0.0,0.0,0.0
+GPT-4,Python,Primitive Obsession,3,0,5,1.0,0.375,0.5454545454545454
+DeepSeek,Python,Primitive Obsession,3,2,5,0.6,0.375,0.4615384615384615
+GPT-4,Python,Data Clumps,3,1,2,0.75,0.6,0.6666666666666665
+DeepSeek,Python,Data Clumps,0,5,5,0.0,0.0,0.0
+GPT-4,Python,Long Parameter List,4,0,1,1.0,0.8,0.888888888888889
+DeepSeek,Python,Long Parameter List,4,1,1,0.8,0.8,0.8000000000000002
+GPT-4,Python,Switch Statements,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+DeepSeek,Python,Switch Statements,4,0,2,1.0,0.6666666666666666,0.8
+GPT-4,Python,Temporary Field,1,0,4,1.0,0.2,0.33333333333333337
+DeepSeek,Python,Temporary Field,2,2,3,0.5,0.4,0.4444444444444445
+GPT-4,Python,Shotgun Surgery,0,0,25,0.0,0.0,0.0
+DeepSeek,Python,Shotgun Surgery,0,1,25,0.0,0.0,0.0
+GPT-4,Python,Divergent Change,3,0,12,1.0,0.2,0.33333333333333337
+DeepSeek,Python,Divergent Change,0,2,15,0.0,0.0,0.0
+GPT-4,Python,Parallel Inheritance Hierarchies,2,0,8,1.0,0.2,0.33333333333333337
+DeepSeek,Python,Parallel Inheritance Hierarchies,0,0,10,0.0,0.0,0.0
+GPT-4,Python,Speculative Generality,1,0,4,1.0,0.2,0.33333333333333337
+DeepSeek,Python,Speculative Generality,2,14,3,0.125,0.4,0.19047619047619047
+GPT-4,Python,Dead Code,10,0,0,1.0,1.0,1.0
+DeepSeek,Python,Dead Code,10,3,0,0.7692307692307693,1.0,0.8695652173913044
+GPT-4,Python,Message Chains,5,0,0,1.0,1.0,1.0
+DeepSeek,Python,Message Chains,4,0,1,1.0,0.8,0.888888888888889
+GPT-4,Python,Middle Man,5,0,0,1.0,1.0,1.0
+DeepSeek,Python,Middle Man,5,0,0,1.0,1.0,1.0
+GPT-4,Python,Inappropriate Intimacy,2,2,3,0.5,0.4,0.4444444444444445
+DeepSeek,Python,Inappropriate Intimacy,0,1,5,0.0,0.0,0.0
+GPT-4,Python,Long Method,5,0,0,1.0,1.0,1.0
+DeepSeek,Python,Long Method,4,0,1,1.0,0.8,0.888888888888889
+GPT-4,Python,Duplicate Code,4,2,0,0.6666666666666666,1.0,0.8
+DeepSeek,Python,Duplicate Code,4,1,0,0.8,1.0,0.888888888888889
+GPT-4,Python,Refused Bequest,0,1,4,0.0,0.0,0.0
+DeepSeek,Python,Refused Bequest,3,1,1,0.75,0.75,0.75
+GPT-4,Python,Data Class,1,0,0,1.0,1.0,1.0
+DeepSeek,Python,Data Class,0,4,1,0.0,0.0,0.0
+GPT-4,Python,Feature Envy,0,1,2,0.0,0.0,0.0
+DeepSeek,Python,Feature Envy,0,1,2,0.0,0.0,0.0
+GPT-4,Python,Unnecessary Comments,0,0,1,0.0,0.0,0.0
+DeepSeek,Python,Unnecessary Comments,0,0,1,0.0,0.0,0.0
+GPT-4,Java,Large Class,6,0,0,1.0,1.0,1.0
+DeepSeek,Java,Large Class,0,6,6,0.0,0.0,0.0
+GPT-4,Java,Primitive Obsession,1,1,5,0.5,0.16666666666666666,0.25
+DeepSeek,Java,Primitive Obsession,0,2,6,0.0,0.0,0.0
+GPT-4,Java,Data Clumps,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+DeepSeek,Java,Data Clumps,0,6,6,0.0,0.0,0.0
+GPT-4,Java,Long Parameter List,1,2,0,0.3333333333333333,1.0,0.5
+DeepSeek,Java,Long Parameter List,0,5,1,0.0,0.0,0.0
+GPT-4,Java,Switch Statements,5,1,2,0.8333333333333334,0.7142857142857143,0.7692307692307692
+DeepSeek,Java,Switch Statements,6,0,1,1.0,0.8571428571428571,0.923076923076923
+GPT-4,Java,Temporary Field,0,0,1,0.0,0.0,0.0
+DeepSeek,Java,Temporary Field,0,2,1,0.0,0.0,0.0
+GPT-4,Java,Shotgun Surgery,0,0,30,0.0,0.0,0.0
+DeepSeek,Java,Shotgun Surgery,0,4,30,0.0,0.0,0.0
+GPT-4,Java,Divergent Change,0,0,18,0.0,0.0,0.0
+DeepSeek,Java,Divergent Change,0,2,18,0.0,0.0,0.0
+GPT-4,Java,Parallel Inheritance Hierarchies,0,0,12,0.0,0.0,0.0
+DeepSeek,Java,Parallel Inheritance Hierarchies,0,0,12,0.0,0.0,0.0
+GPT-4,Java,Speculative Generality,0,0,6,0.0,0.0,0.0
+DeepSeek,Java,Speculative Generality,0,8,6,0.0,0.0,0.0
+GPT-4,Java,Dead Code,8,1,0,0.8888888888888888,1.0,0.9411764705882353
+DeepSeek,Java,Dead Code,8,2,0,0.8,1.0,0.888888888888889
+GPT-4,Java,Message Chains,5,0,0,1.0,1.0,1.0
+DeepSeek,Java,Message Chains,5,0,0,1.0,1.0,1.0
+GPT-4,Java,Middle Man,5,0,0,1.0,1.0,1.0
+DeepSeek,Java,Middle Man,5,0,0,1.0,1.0,1.0
+GPT-4,Java,Inappropriate Intimacy,4,1,1,0.8,0.8,0.8000000000000002
+DeepSeek,Java,Inappropriate Intimacy,1,0,4,1.0,0.2,0.33333333333333337
+GPT-4,Java,Long Method,5,1,0,0.8333333333333334,1.0,0.9090909090909091
+DeepSeek,Java,Long Method,5,0,0,1.0,1.0,1.0
+GPT-4,Java,Duplicate Code,5,1,0,0.8333333333333334,1.0,0.9090909090909091
+DeepSeek,Java,Duplicate Code,5,1,0,0.8333333333333334,1.0,0.9090909090909091
+GPT-4,Java,Refused Bequest,0,1,1,0.0,0.0,0.0
+DeepSeek,Java,Refused Bequest,0,5,1,0.0,0.0,0.0
+GPT-4,Java,Data Class,0,0,0,0.0,0.0,0.0
+DeepSeek,Java,Data Class,0,1,0,0.0,0.0,0.0
+GPT-4,Java,Feature Envy,0,0,1,0.0,0.0,0.0
+DeepSeek,Java,Feature Envy,0,3,1,0.0,0.0,0.0
+GPT-4,Java,Unnecessary Comments,0,0,0,0.0,0.0,0.0
+DeepSeek,Java,Unnecessary Comments,0,0,0,0.0,0.0,0.0
+GPT-4,JavaScript,Large Class,5,0,0,1.0,1.0,1.0
+DeepSeek,JavaScript,Large Class,0,5,5,0.0,0.0,0.0
+GPT-4,JavaScript,Primitive Obsession,1,1,7,0.5,0.125,0.2
+DeepSeek,JavaScript,Primitive Obsession,1,2,7,0.3333333333333333,0.125,0.18181818181818182
+GPT-4,JavaScript,Data Clumps,0,5,5,0.0,0.0,0.0
+DeepSeek,JavaScript,Data Clumps,0,5,5,0.0,0.0,0.0
+GPT-4,JavaScript,Long Parameter List,1,5,1,0.16666666666666666,0.5,0.25
+DeepSeek,JavaScript,Long Parameter List,0,5,2,0.0,0.0,0.0
+GPT-4,JavaScript,Switch Statements,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+DeepSeek,JavaScript,Switch Statements,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+GPT-4,JavaScript,Temporary Field,0,0,1,0.0,0.0,0.0
+DeepSeek,JavaScript,Temporary Field,0,5,1,0.0,0.0,0.0
+GPT-4,JavaScript,Shotgun Surgery,0,0,25,0.0,0.0,0.0
+DeepSeek,JavaScript,Shotgun Surgery,0,3,25,0.0,0.0,0.0
+GPT-4,JavaScript,Divergent Change,0,0,15,0.0,0.0,0.0
+DeepSeek,JavaScript,Divergent Change,0,2,15,0.0,0.0,0.0
+GPT-4,JavaScript,Parallel Inheritance Hierarchies,0,0,10,0.0,0.0,0.0
+DeepSeek,JavaScript,Parallel Inheritance Hierarchies,0,0,10,0.0,0.0,0.0
+GPT-4,JavaScript,Speculative Generality,0,0,5,0.0,0.0,0.0
+DeepSeek,JavaScript,Speculative Generality,0,7,5,0.0,0.0,0.0
+GPT-4,JavaScript,Dead Code,7,4,0,0.6363636363636364,1.0,0.7777777777777778
+DeepSeek,JavaScript,Dead Code,7,7,0,0.5,1.0,0.6666666666666666
+GPT-4,JavaScript,Message Chains,5,0,0,1.0,1.0,1.0
+DeepSeek,JavaScript,Message Chains,5,0,0,1.0,1.0,1.0
+GPT-4,JavaScript,Middle Man,5,0,0,1.0,1.0,1.0
+DeepSeek,JavaScript,Middle Man,5,0,0,1.0,1.0,1.0
+GPT-4,JavaScript,Inappropriate Intimacy,4,1,1,0.8,0.8,0.8000000000000002
+DeepSeek,JavaScript,Inappropriate Intimacy,1,1,4,0.5,0.2,0.28571428571428575
+GPT-4,JavaScript,Long Method,5,0,0,1.0,1.0,1.0
+DeepSeek,JavaScript,Long Method,4,0,1,1.0,0.8,0.888888888888889
+GPT-4,JavaScript,Duplicate Code,4,2,0,0.6666666666666666,1.0,0.8
+DeepSeek,JavaScript,Duplicate Code,4,4,0,0.5,1.0,0.6666666666666666
+GPT-4,JavaScript,Refused Bequest,0,1,1,0.0,0.0,0.0
+DeepSeek,JavaScript,Refused Bequest,0,3,1,0.0,0.0,0.0
+GPT-4,JavaScript,Data Class,1,0,0,1.0,1.0,1.0
+DeepSeek,JavaScript,Data Class,0,2,1,0.0,0.0,0.0
+GPT-4,JavaScript,Feature Envy,0,0,1,0.0,0.0,0.0
+DeepSeek,JavaScript,Feature Envy,0,3,1,0.0,0.0,0.0
+GPT-4,JavaScript,Unnecessary Comments,0,0,0,0.0,0.0,0.0
+DeepSeek,JavaScript,Unnecessary Comments,0,0,0,0.0,0.0,0.0
+GPT-4,C++,Large Class,6,0,0,1.0,1.0,1.0
+DeepSeek,C++,Large Class,0,6,6,0.0,0.0,0.0
+GPT-4,C++,Primitive Obsession,0,2,5,0.0,0.0,0.0
+DeepSeek,C++,Primitive Obsession,0,3,5,0.0,0.0,0.0
+GPT-4,C++,Data Clumps,0,5,5,0.0,0.0,0.0
+DeepSeek,C++,Data Clumps,0,6,5,0.0,0.0,0.0
+GPT-4,C++,Long Parameter List,2,1,1,0.6666666666666666,0.6666666666666666,0.6666666666666666
+DeepSeek,C++,Long Parameter List,2,4,1,0.3333333333333333,0.6666666666666666,0.4444444444444444
+GPT-4,C++,Switch Statements,6,0,0,1.0,1.0,1.0
+DeepSeek,C++,Switch Statements,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+GPT-4,C++,Temporary Field,0,0,2,0.0,0.0,0.0
+DeepSeek,C++,Temporary Field,0,0,2,0.0,0.0,0.0
+GPT-4,C++,Shotgun Surgery,0,0,5,0.0,0.0,0.0
+DeepSeek,C++,Shotgun Surgery,0,2,5,0.0,0.0,0.0
+GPT-4,C++,Divergent Change,0,0,18,0.0,0.0,0.0
+DeepSeek,C++,Divergent Change,0,3,18,0.0,0.0,0.0
+GPT-4,C++,Parallel Inheritance Hierarchies,0,0,12,0.0,0.0,0.0
+DeepSeek,C++,Parallel Inheritance Hierarchies,0,0,12,0.0,0.0,0.0
+GPT-4,C++,Speculative Generality,0,0,6,0.0,0.0,0.0
+DeepSeek,C++,Speculative Generality,0,7,6,0.0,0.0,0.0
+GPT-4,C++,Dead Code,6,1,0,0.8571428571428571,1.0,0.923076923076923
+DeepSeek,C++,Dead Code,6,5,0,0.5454545454545454,1.0,0.7058823529411764
+GPT-4,C++,Message Chains,6,0,0,1.0,1.0,1.0
+DeepSeek,C++,Message Chains,5,1,1,0.8333333333333334,0.8333333333333334,0.8333333333333334
+GPT-4,C++,Middle Man,6,0,0,1.0,1.0,1.0
+DeepSeek,C++,Middle Man,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+GPT-4,C++,Inappropriate Intimacy,6,0,0,1.0,1.0,1.0
+DeepSeek,C++,Inappropriate Intimacy,3,0,3,1.0,0.5,0.6666666666666666
+GPT-4,C++,Long Method,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+DeepSeek,C++,Long Method,5,0,1,1.0,0.8333333333333334,0.9090909090909091
+GPT-4,C++,Duplicate Code,3,3,0,0.5,1.0,0.6666666666666666
+DeepSeek,C++,Duplicate Code,3,2,0,0.6,1.0,0.7499999999999999
+GPT-4,C++,Refused Bequest,0,1,1,0.0,0.0,0.0
+DeepSeek,C++,Refused Bequest,0,6,1,0.0,0.0,0.0
+GPT-4,C++,Data Class,0,0,0,0.0,0.0,0.0
+DeepSeek,C++,Data Class,0,3,0,0.0,0.0,0.0
+GPT-4,C++,Feature Envy,0,0,1,0.0,0.0,0.0
+DeepSeek,C++,Feature Envy,0,3,1,0.0,0.0,0.0
+GPT-4,C++,Unnecessary Comments,0,0,0,0.0,0.0,0.0
+DeepSeek,C++,Unnecessary Comments,0,0,0,0.0,0.0,0.0

@@ -1,0 +1,38 @@
+/'
+Copyright (c) 2025 Ahmed R. Sadik, Honda Research Institute Europe GmbH
+
+This source code is licensed under the MIT License found in the
+LICENSE file in the root directory of this source tree. This dataset contains smelly code for research and refactoring purposes.
+'/
+
+@startuml
+
+class Cashier {}
+class Chef {}
+class Drink {}
+class Pizza {}
+class Shop {}
+class CheesePizza {}
+class VeggiePizza {}
+class TunaPizza {}
+class PepperoniPizza {}
+
+class Customer {}
+
+Shop *-- Cashier
+Shop *-- Chef
+Shop *-- Drink
+Shop *-- Pizza
+
+Cashier --> Drink 
+Cashier --> Chef 
+Chef --> Pizza 
+
+CheesePizza --|> Pizza
+VeggiePizza --|> Pizza
+TunaPizza --|> Pizza
+PepperoniPizza --|> Pizza
+
+Customer --> Shop
+
+@enduml

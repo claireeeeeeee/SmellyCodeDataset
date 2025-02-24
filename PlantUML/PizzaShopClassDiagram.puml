@@ -1,0 +1,72 @@
+/'
+Copyright (c) 2025 Ahmed R. Sadik, Honda Research Institute Europe GmbH
+
+This source code is licensed under the MIT License found in the
+LICENSE file in the root directory of this source tree. This dataset contains smelly code for research and refactoring purposes.
+'/
+
+@startuml
+class Customer {
+    pizza_shop: PizzaShop
+    Customer(pizza_shop: PizzaShop)
+    order_pizza(pizza_type: String): void
+}
+
+class PizzaShop {
+    casher: Casher
+    chef: Chef
+    pizza: Pizza
+    create_pizza(pizza_type: String): Pizza
+    receive_order(pizza_type: String): void
+}
+
+class Casher {
+    chef: Chef
+    take_order(pizza_type: String): void
+    hurry_up_chef(): void
+    calm_customer_down(): void
+    deliver_pizza_to_customer(): void
+}
+
+class Chef {
+    pizza: Pizza
+    bake_pizza(): void
+    cut_pizza_and_put_in_box(): void
+}
+
+class Pizza {
+    size()
+    dough_type()
+    topping()
+}
+
+class CheesePizza {
+    CheesePizza()
+}
+
+class VeggiePizza {
+    VeggiePizza()
+}
+
+class TunaPizza {
+    TunaPizza()
+}
+
+class PepperoniPizza {
+    PepperoniPizza()
+}
+
+Customer --> PizzaShop
+PizzaShop --> Casher
+PizzaShop --> Chef
+PizzaShop --> Pizza
+Casher --> Chef
+Chef --> Pizza
+Pizza <|-- CheesePizza
+Pizza <|-- VeggiePizza
+Pizza <|-- TunaPizza
+Pizza <|-- PepperoniPizza
+@enduml
+
+
+

@@ -1,0 +1,258 @@
+Language,Class,Code Smell #,Category,Code Smell,Method,Type,Identifier
+Python,Shop,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order taking, promotions, complaints, contact management, and payments.",Python_Shop_Entire Class_Large Class
+Python,Shop,2,Bloaters,Primitive Obsession,__init__,"Using primitive types (`bool`, `str`) instead of encapsulating related data into meaningful objects.",Python_Shop___init___Primitive Obsession
+Python,Shop,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`first_name`, `last_name`, `address`, `phone_number`, `email`) should be encapsulated in a Customer object.",Python_Shop___init___Data Clumps
+Python,Shop,4,Object-Orientation Abusers,Switch Statements,handle_complaint,Overuse of if-else statements to handle different complaint types.,Python_Shop_handle_complaint_Switch Statements
+Python,Shop,5,Change Preventers,Divergent Change,notify_for_promotion,Multiple notification methods each handling separate concerns.,Python_Shop_notify_for_promotion_Divergent Change
+Python,Shop,6,Change Preventers,Divergent Change,notify_for_discount,"Similar to `notify_for_promotion`, but managed separately.",Python_Shop_notify_for_discount_Divergent Change
+Python,Shop,7,Change Preventers,Divergent Change,notify_for_new_arrivals,Another notification method that should be unified.,Python_Shop_notify_for_new_arrivals_Divergent Change
+Python,Shop,8,Change Preventers,Parallel Inheritance Hierarchies,apply_discount,Parallel implementation of discount and loyalty points logic.,Python_Shop_apply_discount_Parallel Inheritance Hierarchies
+Python,Shop,9,Change Preventers,Parallel Inheritance Hierarchies,apply_loyalty_points,Another parallel logic similar to `apply_discount`.,Python_Shop_apply_loyalty_points_Parallel Inheritance Hierarchies
+Python,Shop,10,Dispensables,Speculative Generality,ask_for_receipt,Method is present but never used in any flow.,Python_Shop_ask_for_receipt_Speculative Generality
+Python,Shop,11,Dispensables,Dead Code,another_unused_method,Unused method that can be removed.,Python_Shop_another_unused_method_Dead Code
+Python,Shop,12,Dispensables,Dead Code,yet_another_unused_method,Another unused method that can be removed.,Python_Shop_yet_another_unused_method_Dead Code
+Python,Shop,13,Dispensables,Duplicate Code,"update_name, update_address, update_phone_number, update_email",These methods redundantly update single fields instead of using `update_contact_info`.,"Python_Shop_update_name, update_address, update_phone_number, update_email_Duplicate Code"
+Python,Shop,14,Couplers,Inappropriate Intimacy,access_internal_details,Accessing internal attributes (`self.casher.chef.busy`) from another class.,Python_Shop_access_internal_details_Inappropriate Intimacy
+Python,Shop,15,Couplers,Message Chains,chain_of_methods,Excessive method chaining (`self.casher.chef.clean_kitchen()`).,Python_Shop_chain_of_methods_Message Chains
+Python,Shop,16,Couplers,Middle Man,middleman_method,Delegates work without adding value.,Python_Shop_middleman_method_Middle Man
+Python,Shop,17,Bloaters,Long Method,long_method,"Performs multiple actions in a single method, reducing readability.",Python_Shop_long_method_Long Method
+Python,Shop,18,Dispensables,Duplicate Code,order_with_unnecessary_details,Repeated functionality with identical operations on the same attribute.,Python_Shop_order_with_unnecessary_details_Duplicate Code
+Python,Pizza,1,Bloaters,Large Class,__init__,The class handles both pizza attributes and customer details.,Python_Pizza___init___Large Class
+Python,Pizza,2,Bloaters,Data Clumps,update_customer_info,Customer details should be encapsulated into a separate class.,Python_Pizza_update_customer_info_Data Clumps
+Python,Pizza,3,Bloaters,Long Method,long_method,Performs multiple unrelated operations in a single function.,Python_Pizza_long_method_Long Method
+Python,Pizza,4,Bloaters,Long Parameter List,order_with_unnecessary_details,Excessive parameters should be refactored into an object.,Python_Pizza_order_with_unnecessary_details_Long Parameter List
+Python,Pizza,5,Bloaters,Primitive Obsession,__init__,Uses multiple string fields for customer information instead of a structured object.,Python_Pizza___init___Primitive Obsession
+Python,Pizza,6,Object-Orientation Abusers,Switch Statements,handle_complaint,Uses multiple if-else statements instead of a polymorphic solution.,Python_Pizza_handle_complaint_Switch Statements
+Python,Pizza,7,Object-Orientation Abusers,Temporary Field,__init__,Fields like temp_discount_code and temp_order_note are not always used.,Python_Pizza___init___Temporary Field
+Python,Pizza,8,Dispensables,Duplicate Code,duplicate_method,Repeated method calls without meaningful variation.,Python_Pizza_duplicate_method_Duplicate Code
+Python,Pizza,9,Dispensables,Lazy Class,refused_bequest,This method exists but does nothing.,Python_Pizza_refused_bequest_Lazy Class
+Python,Pizza,10,Dispensables,Dead Code,another_unused_method,Unused method without any purpose.,Python_Pizza_another_unused_method_Dead Code
+Python,Pizza,11,Dispensables,Dead Code,yet_another_unused_method,Unused method without any purpose.,Python_Pizza_yet_another_unused_method_Dead Code
+Python,Pizza,12,Couplers,Feature Envy,access_internal_details,Method accesses multiple internal attributes instead of encapsulating behavior.,Python_Pizza_access_internal_details_Feature Envy
+Python,Pizza,13,Couplers,Message Chains,chain_of_methods,A sequence of method calls creating unnecessary dependencies.,Python_Pizza_chain_of_methods_Message Chains
+Python,Pizza,14,Couplers,Middle Man,middleman_method,Delegates work to another method without adding value.,Python_Pizza_middleman_method_Middle Man
+Python,CheesePizza,15,Object-Orientation Abusers,Refused Bequest,handle_complaint,Subclasses override method in a way that suggests bad inheritance design.,Python_CheesePizza_handle_complaint_Refused Bequest
+Python,Drink,1,Dispensables,Lazy Class,Entire Class,The `Drink` class has minimal functionality and lacks meaningful behavior.,Python_Drink_Entire Class_Lazy Class
+Python,Drink,2,Dispensables,Data Class,Entire Class,The class mainly stores data (`drink_type`) without encapsulating behavior.,Python_Drink_Entire Class_Data Class
+Python,Drink,3,Bloaters,Primitive Obsession,create_order,Uses a primitive string (`drink_type`) instead of a structured object.,Python_Drink_create_order_Primitive Obsession
+Python,Customer,1,Bloaters,Large Class,Entire Class,"The class manages too many responsibilities, including orders, complaints, contact info, and promotions.",Python_Customer_Entire Class_Large Class
+Python,Customer,2,Bloaters,Long Method,long_complaint_method,"Method performs multiple unrelated complaints, reducing readability and maintainability.",Python_Customer_long_complaint_method_Long Method
+Python,Customer,3,Bloaters,Long Parameter List,order_with_unnecessary_details,"Takes an excessive number of parameters, making it difficult to use and modify.",Python_Customer_order_with_unnecessary_details_Long Parameter List
+Python,Customer,4,Bloaters,Data Clumps,__init__,"Related customer details (first name, last name, address, phone, email) should be encapsulated.",Python_Customer___init___Data Clumps
+Python,Customer,5,Object-Orientation Abusers,Switch Statements,handle_complaint,Uses multiple if-elif conditions instead of a polymorphic approach.,Python_Customer_handle_complaint_Switch Statements
+Python,Customer,6,Dispensables,Dead Code,another_unused_method,Method exists but is never used.,Python_Customer_another_unused_method_Dead Code
+Python,Customer,7,Dispensables,Dead Code,yet_another_unused_method,Another unused method that can be removed.,Python_Customer_yet_another_unused_method_Dead Code
+Python,Customer,8,Dispensables,Duplicate Code,duplicate_complaint,"Repeated calls to `complain(""Pizza is cold"")` and `complain(""Pizza is late"")`.",Python_Customer_duplicate_complaint_Duplicate Code
+Python,Customer,9,Couplers,Message Chains,chain_of_methods,"Calls multiple methods in a chain, increasing dependency complexity.",Python_Customer_chain_of_methods_Message Chains
+Python,Customer,10,Couplers,Middle Man,middleman_method,Delegates work without adding value.,Python_Customer_middleman_method_Middle Man
+Python,Customer,11,Couplers,Inappropriate Intimacy,access_internal_details,"Accessing `self.pizza_shop.casher.chef.busy`, breaking encapsulation.",Python_Customer_access_internal_details_Inappropriate Intimacy
+Python,Chef,1,Bloaters,Large Class,Entire Class,"The `Chef` class manages pizza baking, order fulfillment, cleaning, complaints, and customer details.",Python_Chef_Entire Class_Large Class
+Python,Chef,2,Bloaters,Long Method,long_method,"Performs multiple unrelated operations, reducing readability and maintainability.",Python_Chef_long_method_Long Method
+Python,Chef,3,Bloaters,Long Parameter List,order_with_unnecessary_details,"Takes an excessive number of parameters, making it difficult to use and modify.",Python_Chef_order_with_unnecessary_details_Long Parameter List
+Python,Chef,4,Bloaters,Data Clumps,__init__,"Related customer details (first name, last name, address, phone, email) should be encapsulated.",Python_Chef___init___Data Clumps
+Python,Chef,5,Object-Orientation Abusers,Switch Statements,handle_complaint,Uses multiple if-elif conditions instead of a polymorphic approach.,Python_Chef_handle_complaint_Switch Statements
+Python,Chef,6,Dispensables,Dead Code,another_unused_method,Method exists but is never used.,Python_Chef_another_unused_method_Dead Code
+Python,Chef,7,Dispensables,Dead Code,yet_another_unused_method,Another unused method that can be removed.,Python_Chef_yet_another_unused_method_Dead Code
+Python,Chef,8,Dispensables,Duplicate Code,duplicate_method,"Repeated calls to `bake_pizza(""Cheese"")`, leading to redundant logic.",Python_Chef_duplicate_method_Duplicate Code
+Python,Chef,9,Couplers,Message Chains,chain_of_methods,"Calls multiple methods in a chain, increasing dependency complexity.",Python_Chef_chain_of_methods_Message Chains
+Python,Chef,10,Couplers,Middle Man,middleman_method,Delegates work without adding value.,Python_Chef_middleman_method_Middle Man
+Python,Chef,11,Couplers,Inappropriate Intimacy,access_internal_details,"Accessing `self.pizza`, breaking encapsulation.",Python_Chef_access_internal_details_Inappropriate Intimacy
+Python,Cashier,1,Bloaters,Large Class,Entire Class,"The `Cashier` class manages orders, customer complaints, promotions, and discounts, violating SRP.",Python_Cashier_Entire Class_Large Class
+Python,Cashier,2,Bloaters,Long Method,long_method,"Performs multiple unrelated operations, reducing readability and maintainability.",Python_Cashier_long_method_Long Method
+Python,Cashier,3,Bloaters,Long Parameter List,order_with_unnecessary_details,"Takes an excessive number of parameters, making it difficult to use and modify.",Python_Cashier_order_with_unnecessary_details_Long Parameter List
+Python,Cashier,4,Object-Orientation Abusers,Switch Statements,handle_complaint,Uses multiple if-elif conditions instead of a polymorphic approach.,Python_Cashier_handle_complaint_Switch Statements
+Python,Cashier,5,Dispensables,Dead Code,another_unused_method,Method exists but is never used.,Python_Cashier_another_unused_method_Dead Code
+Python,Cashier,6,Dispensables,Dead Code,yet_another_unused_method,Another unused method that can be removed.,Python_Cashier_yet_another_unused_method_Dead Code
+Python,Cashier,7,Dispensables,Duplicate Code,duplicate_method,"Repeated calls to `take_order(""Cheese"")`, leading to redundant logic.",Python_Cashier_duplicate_method_Duplicate Code
+Python,Cashier,8,Couplers,Message Chains,chain_of_methods,"Calls multiple methods in a chain, increasing dependency complexity.",Python_Cashier_chain_of_methods_Message Chains
+Python,Cashier,9,Couplers,Middle Man,middleman_method,Delegates work without adding value.,Python_Cashier_middleman_method_Middle Man
+Python,Cashier,10,Couplers,Inappropriate Intimacy,access_internal_details,"Accessing `self.chef.busy`, breaking encapsulation.",Python_Cashier_access_internal_details_Inappropriate Intimacy
+Java,Shop,1,Bloaters,Large Class,Entire Class,"The `Shop` class manages multiple responsibilities: order handling, promotions, complaints, and customer details.",Java_Shop_Entire Class_Large Class
+Java,Shop,2,Bloaters,Long Method,handleComplaint,Uses multiple `if-else` conditions instead of a more maintainable approach.,Java_Shop_handleComplaint_Long Method
+Java,Shop,3,Bloaters,Long Parameter List,updateContactInfo,"Takes too many parameters (firstName, lastName, address, phoneNumber, email).",Java_Shop_updateContactInfo_Long Parameter List
+Java,Shop,4,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",Java_Shop___init___Data Clumps
+Java,Shop,5,Object-Orientation Abusers,Switch Statements,createPizza,Uses multiple `if-else` statements instead of a polymorphic approach for pizza creation.,Java_Shop_createPizza_Switch Statements
+Java,Shop,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,Java_Shop_anotherUnusedMethod_Dead Code
+Java,Pizza,1,Bloaters,Large Class,Entire Class,"The `Pizza` class manages both pizza attributes and customer details, violating SRP.",Java_Pizza_Entire Class_Large Class
+Java,Pizza,2,Bloaters,Primitive Obsession,__init__,"Uses multiple primitive fields (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) instead of an object.",Java_Pizza___init___Primitive Obsession
+Java,Pizza,3,Bloaters,Data Clumps,__init__,Related customer details should be encapsulated in a separate object.,Java_Pizza___init___Data Clumps
+Java,Pizza,4,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",Java_Pizza_longMethod_Long Method
+Java,Pizza,5,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",Java_Pizza_orderWithUnnecessaryDetails_Long Parameter List
+Java,Pizza,6,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,Java_Pizza_handleComplaint_Switch Statements
+Java,Pizza,7,Object-Orientation Abusers,Refused Bequest,refusedBequest,"Method exists but is not used in subclasses, suggesting unnecessary inheritance.",Java_Pizza_refusedBequest_Refused Bequest
+Java,Pizza,8,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,Java_Pizza_anotherUnusedMethod_Dead Code
+Java,Pizza,9,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,Java_Pizza_yetAnotherUnusedMethod_Dead Code
+Java,Pizza,10,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `setTopping(""Cheese"")`, leading to redundant logic.",Java_Pizza_duplicateMethod_Duplicate Code
+Java,Pizza,11,Dispensables,Duplicate Code,"updateCustomerName, updateCustomerAddress, updateCustomerPhoneNumber, updateCustomerEmail",These methods redundantly update single fields instead of using `updateCustomerInfo`.,"Java_Pizza_updateCustomerName, updateCustomerAddress, updateCustomerPhoneNumber, updateCustomerEmail_Duplicate Code"
+Java,Pizza,12,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",Java_Pizza_chainOfMethods_Message Chains
+Java,Pizza,13,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,Java_Pizza_middlemanMethod_Middle Man
+Java,Pizza,14,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.size`, `this.doughType`, `this.topping`, breaking encapsulation.",Java_Pizza_accessInternalDetails_Inappropriate Intimacy
+Java,Drink,1,Bloaters,Large Class,Entire Class,"The `Drink` class handles drink attributes, customer details, promotions, and complaints, violating SRP.",Java_Drink_Entire Class_Large Class
+Java,Drink,2,Bloaters,Primitive Obsession,createOrder,Uses a primitive string (`drinkType`) instead of an enumeration or a structured object.,Java_Drink_createOrder_Primitive Obsession
+Java,Drink,3,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",Java_Drink___init___Data Clumps
+Java,Drink,4,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",Java_Drink_longMethod_Long Method
+Java,Drink,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,Java_Drink_handleComplaint_Switch Statements
+Java,Drink,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,Java_Drink_anotherUnusedMethod_Dead Code
+Java,Drink,7,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,Java_Drink_yetAnotherUnusedMethod_Dead Code
+Java,Drink,8,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `createOrder(""Cola"")`, leading to redundant logic.",Java_Drink_duplicateMethod_Duplicate Code
+Java,Drink,9,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",Java_Drink_chainOfMethods_Message Chains
+Java,Drink,10,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,Java_Drink_middlemanMethod_Middle Man
+Java,Drink,11,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.drinkType`, breaking encapsulation.",Java_Drink_accessInternalDetails_Inappropriate Intimacy
+Java,Customer,1,Bloaters,Large Class,Entire Class,"The `Customer` class manages orders, complaints, contact info, promotions, and discounts, violating SRP.",Java_Customer_Entire Class_Large Class
+Java,Customer,2,Bloaters,Long Method,longComplaintMethod,"Performs multiple unrelated complaints, reducing readability and maintainability.",Java_Customer_longComplaintMethod_Long Method
+Java,Customer,3,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",Java_Customer_orderWithUnnecessaryDetails_Long Parameter List
+Java,Customer,4,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",Java_Customer___init___Data Clumps
+Java,Customer,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,Java_Customer_handleComplaint_Switch Statements
+Java,Customer,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,Java_Customer_anotherUnusedMethod_Dead Code
+Java,Customer,7,Dispensables,Duplicate Code,duplicateComplaint,"Repeated calls to `complain(""Pizza is cold"")` and `complain(""Pizza is late"")`.",Java_Customer_duplicateComplaint_Duplicate Code
+Java,Customer,8,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",Java_Customer_chainOfMethods_Message Chains
+Java,Customer,9,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,Java_Customer_middlemanMethod_Middle Man
+Java,Customer,10,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `pizzaShop.getCashier().getChef().isBusy()`, breaking encapsulation.",Java_Customer_accessInternalDetails_Inappropriate Intimacy
+Java,Chef,1,Bloaters,Large Class,Entire Class,"The `Chef` class manages multiple responsibilities: baking, order fulfillment, customer interactions, and complaints, violating SRP.",Java_Chef_Entire Class_Large Class
+Java,Chef,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",Java_Chef_longMethod_Long Method
+Java,Chef,3,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",Java_Chef___init___Data Clumps
+Java,Chef,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,Java_Chef_handleComplaint_Switch Statements
+Java,Chef,5,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,Java_Chef_anotherUnusedMethod_Dead Code
+Java,Chef,6,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,Java_Chef_yetAnotherUnusedMethod_Dead Code
+Java,Chef,7,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `bakePizza(""Cheese"")`, leading to redundant logic.",Java_Chef_duplicateMethod_Duplicate Code
+Java,Chef,8,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",Java_Chef_chainOfMethods_Message Chains
+Java,Chef,9,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,Java_Chef_middlemanMethod_Middle Man
+Java,Chef,10,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.pizza.getTopping()`, breaking encapsulation.",Java_Chef_accessInternalDetails_Inappropriate Intimacy
+Java,Cashier,1,Bloaters,Large Class,Entire Class,"The `Cashier` class manages orders, customer complaints, promotions, and discounts, violating SRP.",Java_Cashier_Entire Class_Large Class
+Java,Cashier,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",Java_Cashier_longMethod_Long Method
+Java,Cashier,3,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,Java_Cashier_handleComplaint_Switch Statements
+Java,Cashier,4,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,Java_Cashier_anotherUnusedMethod_Dead Code
+Java,Cashier,5,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `takeOrder(""Cheese"")`, leading to redundant logic.",Java_Cashier_duplicateMethod_Duplicate Code
+Java,Cashier,6,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",Java_Cashier_chainOfMethods_Message Chains
+Java,Cashier,7,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,Java_Cashier_middlemanMethod_Middle Man
+Java,Cashier,8,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.chef.isBusy()`, breaking encapsulation.",Java_Cashier_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Shop,1,Bloaters,Large Class,Entire Class,"The `Shop` class manages orders, customer complaints, contact info, promotions, and discounts, violating SRP.",JavaScript_Shop_Entire Class_Large Class
+JavaScript,Shop,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",JavaScript_Shop_longMethod_Long Method
+JavaScript,Shop,3,Bloaters,Long Parameter List,updateContactInfo,"Takes an excessive number of parameters, making it difficult to use and modify.",JavaScript_Shop_updateContactInfo_Long Parameter List
+JavaScript,Shop,4,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",JavaScript_Shop___init___Data Clumps
+JavaScript,Shop,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,JavaScript_Shop_handleComplaint_Switch Statements
+JavaScript,Shop,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,JavaScript_Shop_anotherUnusedMethod_Dead Code
+JavaScript,Shop,7,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,JavaScript_Shop_yetAnotherUnusedMethod_Dead Code
+JavaScript,Shop,8,Dispensables,Duplicate Code,"updateName, updateAddress, updatePhoneNumber, updateEmail",These methods redundantly update single fields instead of using `updateContactInfo`.,"JavaScript_Shop_updateName, updateAddress, updatePhoneNumber, updateEmail_Duplicate Code"
+JavaScript,Shop,9,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",JavaScript_Shop_chainOfMethods_Message Chains
+JavaScript,Shop,10,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,JavaScript_Shop_middlemanMethod_Middle Man
+JavaScript,Shop,11,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.casher.chef.busy`, breaking encapsulation.",JavaScript_Shop_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Pizza,1,Bloaters,Large Class,Entire Class,"The `Pizza` class manages both pizza attributes and customer details, violating SRP.",JavaScript_Pizza_Entire Class_Large Class
+JavaScript,Pizza,2,Bloaters,Primitive Obsession,__init__,"Uses multiple primitive fields (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) instead of an object.",JavaScript_Pizza___init___Primitive Obsession
+JavaScript,Pizza,3,Bloaters,Data Clumps,__init__,Related customer details should be encapsulated in a separate object.,JavaScript_Pizza___init___Data Clumps
+JavaScript,Pizza,4,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",JavaScript_Pizza_longMethod_Long Method
+JavaScript,Pizza,5,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",JavaScript_Pizza_orderWithUnnecessaryDetails_Long Parameter List
+JavaScript,Pizza,6,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,JavaScript_Pizza_handleComplaint_Switch Statements
+JavaScript,Pizza,7,Object-Orientation Abusers,Refused Bequest,refusedBequest,"Method exists but is not used in subclasses, suggesting unnecessary inheritance.",JavaScript_Pizza_refusedBequest_Refused Bequest
+JavaScript,Pizza,8,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,JavaScript_Pizza_anotherUnusedMethod_Dead Code
+JavaScript,Pizza,9,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,JavaScript_Pizza_yetAnotherUnusedMethod_Dead Code
+JavaScript,Pizza,10,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `setTopping(""Cheese"")`, leading to redundant logic.",JavaScript_Pizza_duplicateMethod_Duplicate Code
+JavaScript,Pizza,11,Dispensables,Duplicate Code,"updateCustomerName, updateCustomerAddress, updateCustomerPhoneNumber, updateCustomerEmail",These methods redundantly update single fields instead of using `updateCustomerInfo`.,"JavaScript_Pizza_updateCustomerName, updateCustomerAddress, updateCustomerPhoneNumber, updateCustomerEmail_Duplicate Code"
+JavaScript,Pizza,12,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",JavaScript_Pizza_chainOfMethods_Message Chains
+JavaScript,Pizza,13,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,JavaScript_Pizza_middlemanMethod_Middle Man
+JavaScript,Pizza,14,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.size`, `this.doughType`, `this.topping`, breaking encapsulation.",JavaScript_Pizza_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Drink,1,Dispensables,Lazy Class,Entire Class,The `Drink` class has minimal functionality and lacks meaningful behavior.,JavaScript_Drink_Entire Class_Lazy Class
+JavaScript,Drink,2,Dispensables,Data Class,Entire Class,The class mainly stores data (`drinkType`) without encapsulating behavior.,JavaScript_Drink_Entire Class_Data Class
+JavaScript,Drink,3,Bloaters,Primitive Obsession,createOrder,Uses a primitive string (`drinkType`) instead of a structured object.,JavaScript_Drink_createOrder_Primitive Obsession
+JavaScript,Customer,1,Bloaters,Large Class,Entire Class,"The `Customer` class manages orders, complaints, contact info, promotions, and drinks, violating SRP.",JavaScript_Customer_Entire Class_Large Class
+JavaScript,Customer,2,Bloaters,Long Method,longComplaintMethod,"Performs multiple unrelated complaints, reducing readability and maintainability.",JavaScript_Customer_longComplaintMethod_Long Method
+JavaScript,Customer,3,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",JavaScript_Customer_orderWithUnnecessaryDetails_Long Parameter List
+JavaScript,Customer,4,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",JavaScript_Customer___init___Data Clumps
+JavaScript,Customer,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,JavaScript_Customer_handleComplaint_Switch Statements
+JavaScript,Customer,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,JavaScript_Customer_anotherUnusedMethod_Dead Code
+JavaScript,Customer,7,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,JavaScript_Customer_yetAnotherUnusedMethod_Dead Code
+JavaScript,Customer,8,Dispensables,Duplicate Code,duplicateComplaint,"Repeated calls to `complain(""Pizza is cold"")` and `complain(""Pizza is late"")`.",JavaScript_Customer_duplicateComplaint_Duplicate Code
+JavaScript,Customer,9,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",JavaScript_Customer_chainOfMethods_Message Chains
+JavaScript,Customer,10,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,JavaScript_Customer_middlemanMethod_Middle Man
+JavaScript,Customer,11,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.Shop.casher.chef.busy`, breaking encapsulation.",JavaScript_Customer_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Chef,1,Bloaters,Large Class,Entire Class,"The `Chef` class manages pizza baking, order fulfillment, complaints, customer notifications, and discounts, violating SRP.",JavaScript_Chef_Entire Class_Large Class
+JavaScript,Chef,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",JavaScript_Chef_longMethod_Long Method
+JavaScript,Chef,3,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",JavaScript_Chef_orderWithUnnecessaryDetails_Long Parameter List
+JavaScript,Chef,4,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",JavaScript_Chef___init___Data Clumps
+JavaScript,Chef,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,JavaScript_Chef_handleComplaint_Switch Statements
+JavaScript,Chef,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,JavaScript_Chef_anotherUnusedMethod_Dead Code
+JavaScript,Chef,7,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,JavaScript_Chef_yetAnotherUnusedMethod_Dead Code
+JavaScript,Chef,8,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `bakePizza(""Cheese"")`, leading to redundant logic.",JavaScript_Chef_duplicateMethod_Duplicate Code
+JavaScript,Chef,9,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",JavaScript_Chef_chainOfMethods_Message Chains
+JavaScript,Chef,10,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,JavaScript_Chef_middlemanMethod_Middle Man
+JavaScript,Chef,11,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.pizza`, breaking encapsulation.",JavaScript_Chef_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Chef,1,Bloaters,Large Class,Entire Class,"The `Chef` class manages multiple responsibilities, including baking, order fulfillment, complaints, and promotions.",JavaScript_Chef_Entire Class_Large Class
+JavaScript,Chef,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",JavaScript_Chef_longMethod_Long Method
+JavaScript,Chef,3,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",JavaScript_Chef_orderWithUnnecessaryDetails_Long Parameter List
+JavaScript,Chef,4,Bloaters,Data Clumps,__init__,"Related customer details (firstName, lastName, address, phoneNumber, email) should be encapsulated.",JavaScript_Chef___init___Data Clumps
+JavaScript,Chef,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,JavaScript_Chef_handleComplaint_Switch Statements
+JavaScript,Chef,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,JavaScript_Chef_anotherUnusedMethod_Dead Code
+JavaScript,Chef,7,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,JavaScript_Chef_yetAnotherUnusedMethod_Dead Code
+JavaScript,Chef,8,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `bakePizza(""Cheese"")`, leading to redundant logic.",JavaScript_Chef_duplicateMethod_Duplicate Code
+JavaScript,Chef,9,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",JavaScript_Chef_chainOfMethods_Message Chains
+JavaScript,Chef,10,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,JavaScript_Chef_middlemanMethod_Middle Man
+JavaScript,Chef,11,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.pizza`, breaking encapsulation.",JavaScript_Chef_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Cashier,1,Bloaters,Large Class,Entire Class,"The `Cashier` class manages orders, customer complaints, promotions, and discounts, violating SRP.",JavaScript_Cashier_Entire Class_Large Class
+JavaScript,Cashier,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",JavaScript_Cashier_longMethod_Long Method
+JavaScript,Cashier,3,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",JavaScript_Cashier_orderWithUnnecessaryDetails_Long Parameter List
+JavaScript,Cashier,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,JavaScript_Cashier_handleComplaint_Switch Statements
+JavaScript,Cashier,5,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,JavaScript_Cashier_anotherUnusedMethod_Dead Code
+JavaScript,Cashier,6,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,JavaScript_Cashier_yetAnotherUnusedMethod_Dead Code
+JavaScript,Cashier,7,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `takeOrder(""Cheese"")`, leading to redundant logic.",JavaScript_Cashier_duplicateMethod_Duplicate Code
+JavaScript,Cashier,8,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",JavaScript_Cashier_chainOfMethods_Message Chains
+JavaScript,Cashier,9,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,JavaScript_Cashier_middlemanMethod_Middle Man
+JavaScript,Cashier,10,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this.chef.busy`, breaking encapsulation.",JavaScript_Cashier_accessInternalDetails_Inappropriate Intimacy
+C++,Shop,1,Bloaters,Large Class,Entire Class,"The `Shop` class manages multiple responsibilities: order handling, customer details, promotions, and complaints, violating SRP.",C++_Shop_Entire Class_Large Class
+C++,Shop,2,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",C++_Shop_orderWithUnnecessaryDetails_Long Parameter List
+C++,Shop,3,Bloaters,Data Clumps,__init__,"Related customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated in a separate class.",C++_Shop___init___Data Clumps
+C++,Shop,4,Object-Orientation Abusers,Switch Statements,createPizza,Uses multiple `if-else` conditions instead of a polymorphic approach for pizza creation.,C++_Shop_createPizza_Switch Statements
+C++,Shop,5,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,C++_Shop_anotherUnusedMethod_Dead Code
+C++,Shop,6,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",C++_Shop_chainOfMethods_Message Chains
+C++,Shop,7,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,C++_Shop_middlemanMethod_Middle Man
+C++,Shop,8,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `cashier->getChef()->isBusy()`, breaking encapsulation.",C++_Shop_accessInternalDetails_Inappropriate Intimacy
+C++,Pizza,1,Bloaters,Large Class,Entire Class,"The `Pizza` class manages both pizza attributes and customer details, violating SRP.",C++_Pizza_Entire Class_Large Class
+C++,Pizza,2,Bloaters,Primitive Obsession,__init__,"Uses multiple primitive fields (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) instead of an object.",C++_Pizza___init___Primitive Obsession
+C++,Pizza,3,Bloaters,Data Clumps,__init__,Related customer details should be encapsulated in a separate object.,C++_Pizza___init___Data Clumps
+C++,Pizza,4,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",C++_Pizza_longMethod_Long Method
+C++,Pizza,5,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",C++_Pizza_orderWithUnnecessaryDetails_Long Parameter List
+C++,Pizza,6,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,C++_Pizza_handleComplaint_Switch Statements
+C++,Pizza,7,Object-Orientation Abusers,Refused Bequest,refusedBequest,"Method exists but is not used in subclasses, suggesting unnecessary inheritance.",C++_Pizza_refusedBequest_Refused Bequest
+C++,Pizza,8,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,C++_Pizza_anotherUnusedMethod_Dead Code
+C++,Pizza,9,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method that can be removed.,C++_Pizza_yetAnotherUnusedMethod_Dead Code
+C++,Pizza,10,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `setTopping(""Cheese"")`, leading to redundant logic.",C++_Pizza_duplicateMethod_Duplicate Code
+C++,Pizza,11,Dispensables,Duplicate Code,"updateCustomerName, updateCustomerAddress, updateCustomerPhoneNumber, updateCustomerEmail",These methods redundantly update single fields instead of using `updateCustomerInfo`.,"C++_Pizza_updateCustomerName, updateCustomerAddress, updateCustomerPhoneNumber, updateCustomerEmail_Duplicate Code"
+C++,Pizza,12,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",C++_Pizza_chainOfMethods_Message Chains
+C++,Pizza,13,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,C++_Pizza_middlemanMethod_Middle Man
+C++,Pizza,14,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this->size`, `this->doughType`, `this->topping`, breaking encapsulation.",C++_Pizza_accessInternalDetails_Inappropriate Intimacy
+C++,Drink,1,Bloaters,Large Class,Entire Class,"The `Drink` class handles drink attributes, customer details, promotions, and complaints, violating SRP.",C++_Drink_Entire Class_Large Class
+C++,Drink,2,Bloaters,Primitive Obsession,orderDrink,Uses a primitive string (`drinkType`) instead of an enumeration or a structured object.,C++_Drink_orderDrink_Primitive Obsession
+C++,Drink,3,Bloaters,Data Clumps,__init__,"Related customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated in a separate class.",C++_Drink___init___Data Clumps
+C++,Drink,4,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",C++_Drink_longMethod_Long Method
+C++,Drink,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,C++_Drink_handleComplaint_Switch Statements
+C++,Drink,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,C++_Drink_anotherUnusedMethod_Dead Code
+C++,Drink,7,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `orderDrink(""Water"")`, leading to redundant logic.",C++_Drink_duplicateMethod_Duplicate Code
+C++,Drink,8,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",C++_Drink_chainOfMethods_Message Chains
+C++,Drink,9,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,C++_Drink_middlemanMethod_Middle Man
+C++,Drink,10,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this->size`, `this->drinkType`, breaking encapsulation.",C++_Drink_accessInternalDetails_Inappropriate Intimacy
+C++,Customer,1,Bloaters,Large Class,Entire Class,"The `Customer` class manages orders, complaints, contact info, promotions, and discounts, violating SRP.",C++_Customer_Entire Class_Large Class
+C++,Customer,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated complaints, reducing readability and maintainability.",C++_Customer_longMethod_Long Method
+C++,Customer,3,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Takes an excessive number of parameters, making it difficult to use and modify.",C++_Customer_orderWithUnnecessaryDetails_Long Parameter List
+C++,Customer,4,Bloaters,Data Clumps,__init__,"Related customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated.",C++_Customer___init___Data Clumps
+C++,Customer,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,C++_Customer_handleComplaint_Switch Statements
+C++,Customer,6,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,C++_Customer_anotherUnusedMethod_Dead Code
+C++,Customer,7,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `orderPizza(""Cheese"")`, leading to redundant logic.",C++_Customer_duplicateMethod_Duplicate Code
+C++,Customer,8,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",C++_Customer_chainOfMethods_Message Chains
+C++,Customer,9,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,C++_Customer_middlemanMethod_Middle Man
+C++,Customer,10,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `pizzaShop->getCashier()->hurryUpChef()`, breaking encapsulation.",C++_Customer_accessInternalDetails_Inappropriate Intimacy
+C++,Chef,1,Bloaters,Large Class,Entire Class,"The `Chef` class manages multiple responsibilities: baking, order fulfillment, customer interactions, and complaints, violating SRP.",C++_Chef_Entire Class_Large Class
+C++,Chef,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",C++_Chef_longMethod_Long Method
+C++,Chef,3,Bloaters,Data Clumps,__init__,"Related customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated.",C++_Chef___init___Data Clumps
+C++,Chef,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,C++_Chef_handleComplaint_Switch Statements
+C++,Chef,5,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,C++_Chef_anotherUnusedMethod_Dead Code
+C++,Chef,6,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `bakePizza(""Cheese"")`, leading to redundant logic.",C++_Chef_duplicateMethod_Duplicate Code
+C++,Chef,7,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",C++_Chef_chainOfMethods_Message Chains
+C++,Chef,8,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,C++_Chef_middlemanMethod_Middle Man
+C++,Chef,9,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this->pizza->getTopping()`, breaking encapsulation.",C++_Chef_accessInternalDetails_Inappropriate Intimacy
+C++,Cashier,1,Bloaters,Large Class,Entire Class,"The `Cashier` class manages orders, customer complaints, promotions, and discounts, violating SRP.",C++_Cashier_Entire Class_Large Class
+C++,Cashier,2,Bloaters,Long Method,longMethod,"Performs multiple unrelated operations, reducing readability and maintainability.",C++_Cashier_longMethod_Long Method
+C++,Cashier,3,Object-Orientation Abusers,Switch Statements,handleComplaint,Uses multiple if-else conditions instead of a polymorphic approach.,C++_Cashier_handleComplaint_Switch Statements
+C++,Cashier,4,Dispensables,Dead Code,anotherUnusedMethod,Method exists but is never used.,C++_Cashier_anotherUnusedMethod_Dead Code
+C++,Cashier,5,Dispensables,Duplicate Code,duplicateMethod,"Repeated calls to `takeOrder(""Cheese"")`, leading to redundant logic.",C++_Cashier_duplicateMethod_Duplicate Code
+C++,Cashier,6,Couplers,Message Chains,chainOfMethods,"Calls multiple methods in a chain, increasing dependency complexity.",C++_Cashier_chainOfMethods_Message Chains
+C++,Cashier,7,Couplers,Middle Man,middlemanMethod,Delegates work without adding value.,C++_Cashier_middlemanMethod_Middle Man
+C++,Cashier,8,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing `this->chef->isBusy()`, breaking encapsulation.",C++_Cashier_accessInternalDetails_Inappropriate Intimacy

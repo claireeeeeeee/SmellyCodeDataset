@@ -1,0 +1,479 @@
+Language,Class,Code Smell #,Category,Code Smell,Method,Type,Identifier
+Python,Shop,1,Bloaters,Large Class,Entire Class,"The class has too many responsibilities (order processing, notifications, customer management, etc.)",Python_Shop_Entire Class_Large Class
+Python,Shop,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`bool`) for `frequent_customer_discount` instead of a more expressive construct,Python_Shop___init___Primitive Obsession
+Python,Shop,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`first_name`, `last_name`, `address`, `phone_number`, `email`) that should be encapsulated",Python_Shop___init___Data Clumps
+Python,Shop,4,Bloaters,Long Parameter List,order_with_unnecessary_details,"Method receives multiple unrelated parameters (`first_name`, `last_name`, etc.)",Python_Shop_order_with_unnecessary_details_Long Parameter List
+Python,Shop,5,Object-Orientation Abusers,Switch Statements,handle_complaint,Overuse of if-else statements to handle different complaints,Python_Shop_handle_complaint_Switch Statements
+Python,Shop,6,Object-Orientation Abusers,Temporary Field,__init__,"Fields (`temp_discount_code`, `temp_order_note`) used only under specific conditions",Python_Shop___init___Temporary Field
+Python,Shop,7,Change Preventers,Shotgun Surgery,update_contact_info,Multiple update methods modifying individual fields instead of a single encapsulated update,Python_Shop_update_contact_info_Shotgun Surgery
+Python,Shop,8,Change Preventers,Shotgun Surgery,update_name,Splitting name updates across different methods instead of a single encapsulated update,Python_Shop_update_name_Shotgun Surgery
+Python,Shop,9,Change Preventers,Shotgun Surgery,update_address,"Similar to `update_name`, updates should be encapsulated",Python_Shop_update_address_Shotgun Surgery
+Python,Shop,10,Change Preventers,Shotgun Surgery,update_phone_number,Separate field update that contributes to shotgun surgery,Python_Shop_update_phone_number_Shotgun Surgery
+Python,Shop,11,Change Preventers,Shotgun Surgery,update_email,Separate field update that contributes to shotgun surgery,Python_Shop_update_email_Shotgun Surgery
+Python,Shop,12,Change Preventers,Divergent Change,notify_for_promotion,Multiple notification methods each handling separate concerns,Python_Shop_notify_for_promotion_Divergent Change
+Python,Shop,13,Change Preventers,Divergent Change,notify_for_discount,"Related to `notify_for_promotion`, but managed separately",Python_Shop_notify_for_discount_Divergent Change
+Python,Shop,14,Change Preventers,Divergent Change,notify_for_new_arrivals,Another notification method that should be unified,Python_Shop_notify_for_new_arrivals_Divergent Change
+Python,Shop,15,Change Preventers,Parallel Inheritance Hierarchies,apply_discount,Parallel implementation of discount and loyalty points logic,Python_Shop_apply_discount_Parallel Inheritance Hierarchies
+Python,Shop,16,Change Preventers,Parallel Inheritance Hierarchies,apply_loyalty_points,Another parallel logic similar to `apply_discount`,Python_Shop_apply_loyalty_points_Parallel Inheritance Hierarchies
+Python,Shop,17,Dispensables,Speculative Generality,ask_for_receipt,Method is present but never used in any flow,Python_Shop_ask_for_receipt_Speculative Generality
+Python,Shop,18,Dispensables,Dead Code,another_unused_method,Unused method that can be removed,Python_Shop_another_unused_method_Dead Code
+Python,Shop,19,Dispensables,Dead Code,yet_another_unused_method,Another unused method,Python_Shop_yet_another_unused_method_Dead Code
+Python,Shop,20,Couplers,Message Chains,chain_of_methods,Excessive method chaining (`self.casher.chef.clean_kitchen()`),Python_Shop_chain_of_methods_Message Chains
+Python,Shop,21,Couplers,Middle Man,middleman_method,Delegates work without adding value,Python_Shop_middleman_method_Middle Man
+Python,Shop,22,Couplers,Inappropriate Intimacy,access_internal_details,Accesses internal attributes (`self.casher.chef.busy`),Python_Shop_access_internal_details_Inappropriate Intimacy
+Python,Shop,23,Bloaters,Long Method,long_method,"Performs multiple actions in a single method, reducing readability",Python_Shop_long_method_Long Method
+Python,Pizza,1,Bloaters,Large Class,Entire Class,"The class mixes pizza properties, customer management, complaints, and discounts, violating SRP",Python_Pizza_Entire Class_Large Class
+Python,Pizza,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`bool`) for `extra_cheese` instead of a more expressive construct,Python_Pizza___init___Primitive Obsession
+Python,Pizza,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`customer_first_name`, `customer_last_name`, `customer_address`, etc.) that should be encapsulated",Python_Pizza___init___Data Clumps
+Python,Pizza,4,Bloaters,Long Parameter List,order_with_unnecessary_details,"Method receives multiple unrelated parameters (`pizza_type`, `size`, `crust_type`, etc.)",Python_Pizza_order_with_unnecessary_details_Long Parameter List
+Python,Pizza,5,Object-Orientation Abusers,Switch Statements,handle_complaint,Overuse of if-else statements to handle different complaints,Python_Pizza_handle_complaint_Switch Statements
+Python,Pizza,6,Object-Orientation Abusers,Temporary Field,__init__,"Fields (`temp_discount_code`, `temp_order_note`) used only under specific conditions",Python_Pizza___init___Temporary Field
+Python,Pizza,7,Change Preventers,Shotgun Surgery,update_customer_info,Multiple update methods modifying individual fields instead of a single encapsulated update,Python_Pizza_update_customer_info_Shotgun Surgery
+Python,Pizza,8,Change Preventers,Shotgun Surgery,update_customer_name,Splitting name updates across different methods instead of a single encapsulated update,Python_Pizza_update_customer_name_Shotgun Surgery
+Python,Pizza,9,Change Preventers,Shotgun Surgery,update_customer_address,"Similar to `update_customer_name`, updates should be encapsulated",Python_Pizza_update_customer_address_Shotgun Surgery
+Python,Pizza,10,Change Preventers,Shotgun Surgery,update_customer_phone_number,Separate field update that contributes to shotgun surgery,Python_Pizza_update_customer_phone_number_Shotgun Surgery
+Python,Pizza,11,Change Preventers,Shotgun Surgery,update_customer_email,Separate field update that contributes to shotgun surgery,Python_Pizza_update_customer_email_Shotgun Surgery
+Python,Pizza,12,Change Preventers,Divergent Change,notify_for_promotion,Multiple notification methods each handling separate concerns,Python_Pizza_notify_for_promotion_Divergent Change
+Python,Pizza,13,Change Preventers,Divergent Change,notify_for_discount,"Related to `notify_for_promotion`, but managed separately",Python_Pizza_notify_for_discount_Divergent Change
+Python,Pizza,14,Change Preventers,Divergent Change,notify_for_new_arrivals,Another notification method that should be unified,Python_Pizza_notify_for_new_arrivals_Divergent Change
+Python,Pizza,15,Change Preventers,Parallel Inheritance Hierarchies,apply_discount,Parallel implementation of discount and loyalty points logic,Python_Pizza_apply_discount_Parallel Inheritance Hierarchies
+Python,Pizza,16,Change Preventers,Parallel Inheritance Hierarchies,apply_loyalty_points,Another parallel logic similar to `apply_discount`,Python_Pizza_apply_loyalty_points_Parallel Inheritance Hierarchies
+Python,Pizza,17,Dispensables,Speculative Generality,ask_for_receipt,Method is present but never used in any flow,Python_Pizza_ask_for_receipt_Speculative Generality
+Python,Pizza,18,Dispensables,Dead Code,another_unused_method,Unused method that can be removed,Python_Pizza_another_unused_method_Dead Code
+Python,Pizza,19,Dispensables,Dead Code,yet_another_unused_method,Another unused method,Python_Pizza_yet_another_unused_method_Dead Code
+Python,Pizza,20,Dispensables,Duplicate Code,duplicate_method,Repeated functionality with identical operations on the same attribute,Python_Pizza_duplicate_method_Duplicate Code
+Python,Pizza,21,Couplers,Message Chains,chain_of_methods,"Excessive method chaining (`self.update_customer_address(""123 Street"")`)",Python_Pizza_chain_of_methods_Message Chains
+Python,Pizza,22,Couplers,Middle Man,middleman_method,Delegates work without adding value,Python_Pizza_middleman_method_Middle Man
+Python,Pizza,23,Couplers,Inappropriate Intimacy,access_internal_details,"Accesses internal attributes (`self.size`, `self.dough_type`, `self.topping`)",Python_Pizza_access_internal_details_Inappropriate Intimacy
+Python,Pizza,24,Bloaters,Long Method,long_method,"Performs multiple actions in a single method, reducing readability",Python_Pizza_long_method_Long Method
+Python,CheesePizza,25,Object-Orientation Abusers,Refused Bequest,__init__,Subclass inherits but does not use `cheese_type`,Python_CheesePizza___init___Refused Bequest
+Python,CheesePizza,26,Object-Orientation Abusers,Switch Statements,handle_complaint,Overuse of if-else statements to handle different complaints,Python_CheesePizza_handle_complaint_Switch Statements
+Python,Drink,1,Dispensables,Data Class,Entire Class,Class only stores data (`drink_type`) without meaningful behavior,Python_Drink_Entire Class_Data Class
+Python,Drink,2,Bloaters,Primitive Obsession,create_order,Uses a primitive (`string`) instead of a more expressive object for drink type,Python_Drink_create_order_Primitive Obsession
+Python,Drink,3,Bloaters,Primitive Obsession,add_to_order,Uses a primitive (`string`) instead of an object for order processing,Python_Drink_add_to_order_Primitive Obsession
+Python,Drink,4,Bloaters,Primitive Obsession,confirm_order,Uses a primitive (`string`) instead of an object for order confirmation,Python_Drink_confirm_order_Primitive Obsession
+Python,Customer,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: ordering, complaints, contact updates, notifications, and discounts",Python_Customer_Entire Class_Large Class
+Python,Customer,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`bool`) for `frequent_customer_discount` instead of a more expressive construct,Python_Customer___init___Primitive Obsession
+Python,Customer,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`first_name`, `last_name`, `address`, `phone_number`, `email`) should be encapsulated",Python_Customer___init___Data Clumps
+Python,Customer,4,Bloaters,Long Parameter List,order_with_unnecessary_details,"Method receives multiple unrelated parameters (`pizza_type`, `size`, `crust_type`, etc.)",Python_Customer_order_with_unnecessary_details_Long Parameter List
+Python,Customer,5,Object-Orientation Abusers,Switch Statements,handle_complaint,Overuse of if-else statements to handle different complaints,Python_Customer_handle_complaint_Switch Statements
+Python,Customer,6,Object-Orientation Abusers,Temporary Field,__init__,"Fields (`temp_discount_code`, `temp_order_note`) used only under specific conditions",Python_Customer___init___Temporary Field
+Python,Customer,7,Object-Orientation Abusers,Refused Bequest,refused_bequest,Method is meant for inheritance but is empty,Python_Customer_refused_bequest_Refused Bequest
+Python,Customer,8,Change Preventers,Shotgun Surgery,update_contact_info,Multiple update methods modifying individual fields instead of a single encapsulated update,Python_Customer_update_contact_info_Shotgun Surgery
+Python,Customer,9,Change Preventers,Shotgun Surgery,update_name,Splitting name updates across different methods instead of a single encapsulated update,Python_Customer_update_name_Shotgun Surgery
+Python,Customer,10,Change Preventers,Shotgun Surgery,update_address,"Similar to `update_name`, updates should be encapsulated",Python_Customer_update_address_Shotgun Surgery
+Python,Customer,11,Change Preventers,Shotgun Surgery,update_phone_number,Separate field update that contributes to shotgun surgery,Python_Customer_update_phone_number_Shotgun Surgery
+Python,Customer,12,Change Preventers,Shotgun Surgery,update_email,Separate field update that contributes to shotgun surgery,Python_Customer_update_email_Shotgun Surgery
+Python,Customer,13,Change Preventers,Divergent Change,notify_for_promotion,Multiple notification methods each handling separate concerns,Python_Customer_notify_for_promotion_Divergent Change
+Python,Customer,14,Change Preventers,Divergent Change,notify_for_discount,"Related to `notify_for_promotion`, but managed separately",Python_Customer_notify_for_discount_Divergent Change
+Python,Customer,15,Change Preventers,Divergent Change,notify_for_new_arrivals,Another notification method that should be unified,Python_Customer_notify_for_new_arrivals_Divergent Change
+Python,Customer,16,Change Preventers,Parallel Inheritance Hierarchies,apply_discount,Parallel implementation of discount and loyalty points logic,Python_Customer_apply_discount_Parallel Inheritance Hierarchies
+Python,Customer,17,Change Preventers,Parallel Inheritance Hierarchies,apply_loyalty_points,Another parallel logic similar to `apply_discount`,Python_Customer_apply_loyalty_points_Parallel Inheritance Hierarchies
+Python,Customer,18,Dispensables,Speculative Generality,ask_for_receipt,Method is present but never used in any flow,Python_Customer_ask_for_receipt_Speculative Generality
+Python,Customer,19,Dispensables,Dead Code,another_unused_method,Unused method that can be removed,Python_Customer_another_unused_method_Dead Code
+Python,Customer,20,Dispensables,Dead Code,yet_another_unused_method,Another unused method,Python_Customer_yet_another_unused_method_Dead Code
+Python,Customer,21,Dispensables,Duplicate Code,duplicate_complaint,Repeated functionality with identical operations on the same attribute,Python_Customer_duplicate_complaint_Duplicate Code
+Python,Customer,22,Couplers,Feature Envy,order_pizza,Excessive reliance on another class (`pizza_shop`) for core functionality,Python_Customer_order_pizza_Feature Envy
+Python,Customer,23,Couplers,Inappropriate Intimacy,complain,Accessing another object's internal details (`self.pizza_shop.casher.chef.clean_kitchen()`),Python_Customer_complain_Inappropriate Intimacy
+Python,Customer,24,Couplers,Message Chains,chain_of_methods,Excessive method chaining (`self.pizza_shop.casher.chef.clean_kitchen()`),Python_Customer_chain_of_methods_Message Chains
+Python,Customer,25,Couplers,Middle Man,middleman_method,Delegates work without adding value,Python_Customer_middleman_method_Middle Man
+Python,Customer,26,Bloaters,Long Method,long_complaint_method,"Performs multiple actions in a single method, reducing readability",Python_Customer_long_complaint_method_Long Method
+Python,Customer,27,Dispensables,Unnecessary Comments,order_drink,Over-commenting explaining self-explanatory steps,Python_Customer_order_drink_Unnecessary Comments
+Python,Chef,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: baking, delivering, cleaning, notifications, complaints, and discounts",Python_Chef_Entire Class_Large Class
+Python,Chef,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`bool`) for `frequent_customer_discount` instead of a more expressive construct,Python_Chef___init___Primitive Obsession
+Python,Chef,3,Bloaters,Data Clumps,__init__,"Grouped chef details (`first_name`, `last_name`, `address`, `phone_number`, `email`) should be encapsulated",Python_Chef___init___Data Clumps
+Python,Chef,4,Bloaters,Long Parameter List,order_with_unnecessary_details,"Method receives multiple unrelated parameters (`pizza_type`, `size`, `crust_type`, etc.)",Python_Chef_order_with_unnecessary_details_Long Parameter List
+Python,Chef,5,Object-Orientation Abusers,Switch Statements,handle_complaint,Overuse of if-else statements to handle different complaints,Python_Chef_handle_complaint_Switch Statements
+Python,Chef,6,Object-Orientation Abusers,Temporary Field,__init__,"Fields (`temp_discount_code`, `temp_order_note`) used only under specific conditions",Python_Chef___init___Temporary Field
+Python,Chef,7,Object-Orientation Abusers,Refused Bequest,refused_bequest,Method is meant for inheritance but is empty,Python_Chef_refused_bequest_Refused Bequest
+Python,Chef,8,Change Preventers,Shotgun Surgery,update_contact_info,Multiple update methods modifying individual fields instead of a single encapsulated update,Python_Chef_update_contact_info_Shotgun Surgery
+Python,Chef,9,Change Preventers,Shotgun Surgery,update_name,Splitting name updates across different methods instead of a single encapsulated update,Python_Chef_update_name_Shotgun Surgery
+Python,Chef,10,Change Preventers,Shotgun Surgery,update_address,"Similar to `update_name`, updates should be encapsulated",Python_Chef_update_address_Shotgun Surgery
+Python,Chef,11,Change Preventers,Shotgun Surgery,update_phone_number,Separate field update that contributes to shotgun surgery,Python_Chef_update_phone_number_Shotgun Surgery
+Python,Chef,12,Change Preventers,Shotgun Surgery,update_email,Separate field update that contributes to shotgun surgery,Python_Chef_update_email_Shotgun Surgery
+Python,Chef,13,Change Preventers,Divergent Change,notify_for_promotion,Multiple notification methods each handling separate concerns,Python_Chef_notify_for_promotion_Divergent Change
+Python,Chef,14,Change Preventers,Divergent Change,notify_for_discount,"Related to `notify_for_promotion`, but managed separately",Python_Chef_notify_for_discount_Divergent Change
+Python,Chef,15,Change Preventers,Divergent Change,notify_for_new_arrivals,Another notification method that should be unified,Python_Chef_notify_for_new_arrivals_Divergent Change
+Python,Chef,16,Change Preventers,Parallel Inheritance Hierarchies,apply_discount,Parallel implementation of discount and loyalty points logic,Python_Chef_apply_discount_Parallel Inheritance Hierarchies
+Python,Chef,17,Change Preventers,Parallel Inheritance Hierarchies,apply_loyalty_points,Another parallel logic similar to `apply_discount`,Python_Chef_apply_loyalty_points_Parallel Inheritance Hierarchies
+Python,Chef,18,Dispensables,Speculative Generality,ask_for_receipt,Method is present but never used in any flow,Python_Chef_ask_for_receipt_Speculative Generality
+Python,Chef,19,Dispensables,Dead Code,another_unused_method,Unused method that can be removed,Python_Chef_another_unused_method_Dead Code
+Python,Chef,20,Dispensables,Dead Code,yet_another_unused_method,Another unused method,Python_Chef_yet_another_unused_method_Dead Code
+Python,Chef,21,Dispensables,Duplicate Code,duplicate_method,Repeated functionality with identical operations on the same attribute,Python_Chef_duplicate_method_Duplicate Code
+Python,Chef,22,Couplers,Inappropriate Intimacy,access_internal_details,Accesses internal details of the `Pizza` object directly,Python_Chef_access_internal_details_Inappropriate Intimacy
+Python,Chef,23,Couplers,Message Chains,chain_of_methods,Excessive method chaining (`self.clean_kitchen()`),Python_Chef_chain_of_methods_Message Chains
+Python,Chef,24,Couplers,Middle Man,middleman_method,Delegates work without adding value,Python_Chef_middleman_method_Middle Man
+Python,Chef,25,Bloaters,Long Method,long_method,"Performs multiple actions in a single method, reducing readability",Python_Chef_long_method_Long Method
+Python,Cashier,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order taking, complaints, discounts, customer contact, and deliveries",Python_Cashier_Entire Class_Large Class
+Python,Cashier,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`bool`) for `frequent_customer_discount` instead of a more expressive construct,Python_Cashier___init___Primitive Obsession
+Python,Cashier,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`first_name`, `last_name`, `address`, `phone_number`, `email`) should be encapsulated",Python_Cashier___init___Data Clumps
+Python,Cashier,4,Bloaters,Long Parameter List,order_with_unnecessary_details,"Method receives multiple unrelated parameters (`pizza_type`, `size`, `crust_type`, etc.)",Python_Cashier_order_with_unnecessary_details_Long Parameter List
+Python,Cashier,5,Object-Orientation Abusers,Switch Statements,handle_complaint,Overuse of if-else statements to handle different complaints,Python_Cashier_handle_complaint_Switch Statements
+Python,Cashier,6,Object-Orientation Abusers,Temporary Field,__init__,"Fields (`temp_discount_code`, `temp_order_note`) used only under specific conditions",Python_Cashier___init___Temporary Field
+Python,Cashier,7,Object-Orientation Abusers,Refused Bequest,refused_bequest,Method is meant for inheritance but is empty,Python_Cashier_refused_bequest_Refused Bequest
+Python,Cashier,8,Change Preventers,Shotgun Surgery,update_contact_info,Multiple update methods modifying individual fields instead of a single encapsulated update,Python_Cashier_update_contact_info_Shotgun Surgery
+Python,Cashier,9,Change Preventers,Shotgun Surgery,update_name,Splitting name updates across different methods instead of a single encapsulated update,Python_Cashier_update_name_Shotgun Surgery
+Python,Cashier,10,Change Preventers,Shotgun Surgery,update_address,"Similar to `update_name`, updates should be encapsulated",Python_Cashier_update_address_Shotgun Surgery
+Python,Cashier,11,Change Preventers,Shotgun Surgery,update_phone_number,Separate field update that contributes to shotgun surgery,Python_Cashier_update_phone_number_Shotgun Surgery
+Python,Cashier,12,Change Preventers,Shotgun Surgery,update_email,Separate field update that contributes to shotgun surgery,Python_Cashier_update_email_Shotgun Surgery
+Python,Cashier,13,Change Preventers,Divergent Change,notify_for_promotion,Multiple notification methods each handling separate concerns,Python_Cashier_notify_for_promotion_Divergent Change
+Python,Cashier,14,Change Preventers,Divergent Change,notify_for_discount,"Related to `notify_for_promotion`, but managed separately",Python_Cashier_notify_for_discount_Divergent Change
+Python,Cashier,15,Change Preventers,Divergent Change,notify_for_new_arrivals,Another notification method that should be unified,Python_Cashier_notify_for_new_arrivals_Divergent Change
+Python,Cashier,16,Change Preventers,Parallel Inheritance Hierarchies,apply_discount,Parallel implementation of discount and loyalty points logic,Python_Cashier_apply_discount_Parallel Inheritance Hierarchies
+Python,Cashier,17,Change Preventers,Parallel Inheritance Hierarchies,apply_loyalty_points,Another parallel logic similar to `apply_discount`,Python_Cashier_apply_loyalty_points_Parallel Inheritance Hierarchies
+Python,Cashier,18,Dispensables,Speculative Generality,ask_for_receipt,Method is present but never used in any flow,Python_Cashier_ask_for_receipt_Speculative Generality
+Python,Cashier,19,Dispensables,Dead Code,another_unused_method,Unused method that can be removed,Python_Cashier_another_unused_method_Dead Code
+Python,Cashier,20,Dispensables,Dead Code,yet_another_unused_method,Another unused method,Python_Cashier_yet_another_unused_method_Dead Code
+Python,Cashier,21,Dispensables,Duplicate Code,duplicate_method,Repeated functionality with identical operations on the same attribute,Python_Cashier_duplicate_method_Duplicate Code
+Python,Cashier,22,Couplers,Feature Envy,take_order,Excessive reliance on another class (`chef`) for core functionality,Python_Cashier_take_order_Feature Envy
+Python,Cashier,23,Couplers,Inappropriate Intimacy,calm_customer_down,Accessing internal methods of `chef` (`clean_kitchen()`),Python_Cashier_calm_customer_down_Inappropriate Intimacy
+Python,Cashier,24,Couplers,Message Chains,chain_of_methods,Excessive method chaining (`self.chef.clean_kitchen()`),Python_Cashier_chain_of_methods_Message Chains
+Python,Cashier,25,Couplers,Middle Man,middleman_method,Delegates work without adding value,Python_Cashier_middleman_method_Middle Man
+Python,Cashier,26,Bloaters,Long Method,long_method,"Performs multiple actions in a single method, reducing readability",Python_Cashier_long_method_Long Method
+Java,Shop,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order processing, customer contact updates, notifications, and discounts",Java_Shop_Entire Class_Large Class
+Java,Shop,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`boolean`) for `frequentCustomerDiscount` instead of a more expressive construct,Java_Shop___init___Primitive Obsession
+Java,Shop,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",Java_Shop___init___Data Clumps
+Java,Shop,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,Java_Shop_handleComplaint_Switch Statements
+Java,Shop,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,Java_Shop_updateContactInfo_Shotgun Surgery
+Java,Shop,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,Java_Shop_updateName_Shotgun Surgery
+Java,Shop,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",Java_Shop_updateAddress_Shotgun Surgery
+Java,Shop,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,Java_Shop_updatePhoneNumber_Shotgun Surgery
+Java,Shop,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,Java_Shop_updateEmail_Shotgun Surgery
+Java,Shop,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,Java_Shop_notifyForPromotion_Divergent Change
+Java,Shop,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",Java_Shop_notifyForDiscount_Divergent Change
+Java,Shop,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,Java_Shop_notifyForNewArrivals_Divergent Change
+Java,Shop,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,Java_Shop_applyDiscount_Parallel Inheritance Hierarchies
+Java,Shop,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,Java_Shop_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+Java,Shop,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,Java_Shop_askForReceipt_Speculative Generality
+Java,Shop,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,Java_Shop_anotherUnusedMethod_Dead Code
+Java,Pizza,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: pizza properties, customer info, notifications, and complaints",Java_Pizza_Entire Class_Large Class
+Java,Pizza,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`boolean`) for `extraCheese` instead of a more expressive construct,Java_Pizza___init___Primitive Obsession
+Java,Pizza,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`customerFirstName`, `customerLastName`, `customerAddress`, etc.) should be encapsulated",Java_Pizza___init___Data Clumps
+Java,Pizza,4,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Method receives multiple unrelated parameters (`pizzaType`, `size`, `crustType`, etc.)",Java_Pizza_orderWithUnnecessaryDetails_Long Parameter List
+Java,Pizza,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,Java_Pizza_handleComplaint_Switch Statements
+Java,Pizza,6,Object-Orientation Abusers,Temporary Field,__init__,"Fields (`tempDiscountCode`, `tempOrderNote`) used only under specific conditions",Java_Pizza___init___Temporary Field
+Java,Pizza,7,Change Preventers,Shotgun Surgery,updateCustomerInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,Java_Pizza_updateCustomerInfo_Shotgun Surgery
+Java,Pizza,8,Change Preventers,Shotgun Surgery,updateCustomerName,Splitting name updates across different methods instead of a single encapsulated update,Java_Pizza_updateCustomerName_Shotgun Surgery
+Java,Pizza,9,Change Preventers,Shotgun Surgery,updateCustomerAddress,"Similar to `updateCustomerName`, updates should be encapsulated",Java_Pizza_updateCustomerAddress_Shotgun Surgery
+Java,Pizza,10,Change Preventers,Shotgun Surgery,updateCustomerPhoneNumber,Separate field update that contributes to shotgun surgery,Java_Pizza_updateCustomerPhoneNumber_Shotgun Surgery
+Java,Pizza,11,Change Preventers,Shotgun Surgery,updateCustomerEmail,Separate field update that contributes to shotgun surgery,Java_Pizza_updateCustomerEmail_Shotgun Surgery
+Java,Pizza,12,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,Java_Pizza_notifyForPromotion_Divergent Change
+Java,Pizza,13,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",Java_Pizza_notifyForDiscount_Divergent Change
+Java,Pizza,14,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,Java_Pizza_notifyForNewArrivals_Divergent Change
+Java,Pizza,15,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,Java_Pizza_applyDiscount_Parallel Inheritance Hierarchies
+Java,Pizza,16,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,Java_Pizza_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+Java,Pizza,17,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,Java_Pizza_askForReceipt_Speculative Generality
+Java,Pizza,18,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,Java_Pizza_anotherUnusedMethod_Dead Code
+Java,Pizza,19,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method,Java_Pizza_yetAnotherUnusedMethod_Dead Code
+Java,Pizza,20,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,Java_Pizza_duplicateMethod_Duplicate Code
+Java,Pizza,21,Couplers,Message Chains,chainOfMethods,"Excessive method chaining (`this.updateCustomerAddress(""123 Street"")`)",Java_Pizza_chainOfMethods_Message Chains
+Java,Pizza,22,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,Java_Pizza_middlemanMethod_Middle Man
+Java,Pizza,23,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accesses internal attributes (`this.size`, `this.doughType`, `this.topping`)",Java_Pizza_accessInternalDetails_Inappropriate Intimacy
+Java,Pizza,24,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",Java_Pizza_longMethod_Long Method
+Java,CheesePizza,25,Object-Orientation Abusers,Refused Bequest,__init__,Subclass inherits but does not use `cheeseType`,Java_CheesePizza___init___Refused Bequest
+Java,CheesePizza,26,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,Java_CheesePizza_handleComplaint_Switch Statements
+Java,Drink,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: drink properties, customer info, notifications, and complaints",Java_Drink_Entire Class_Large Class
+Java,Drink,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`boolean`) for `isLargeSize` instead of a more expressive construct,Java_Drink___init___Primitive Obsession
+Java,Drink,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`customerFirstName`, `customerLastName`, `customerAddress`, etc.) should be encapsulated",Java_Drink___init___Data Clumps
+Java,Drink,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,Java_Drink_handleComplaint_Switch Statements
+Java,Drink,5,Change Preventers,Shotgun Surgery,updateCustomerInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,Java_Drink_updateCustomerInfo_Shotgun Surgery
+Java,Drink,6,Change Preventers,Shotgun Surgery,updateCustomerName,Splitting name updates across different methods instead of a single encapsulated update,Java_Drink_updateCustomerName_Shotgun Surgery
+Java,Drink,7,Change Preventers,Shotgun Surgery,updateCustomerAddress,"Similar to `updateCustomerName`, updates should be encapsulated",Java_Drink_updateCustomerAddress_Shotgun Surgery
+Java,Drink,8,Change Preventers,Shotgun Surgery,updateCustomerPhoneNumber,Separate field update that contributes to shotgun surgery,Java_Drink_updateCustomerPhoneNumber_Shotgun Surgery
+Java,Drink,9,Change Preventers,Shotgun Surgery,updateCustomerEmail,Separate field update that contributes to shotgun surgery,Java_Drink_updateCustomerEmail_Shotgun Surgery
+Java,Drink,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,Java_Drink_notifyForPromotion_Divergent Change
+Java,Drink,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",Java_Drink_notifyForDiscount_Divergent Change
+Java,Drink,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,Java_Drink_notifyForNewArrivals_Divergent Change
+Java,Drink,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,Java_Drink_applyDiscount_Parallel Inheritance Hierarchies
+Java,Drink,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,Java_Drink_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+Java,Drink,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,Java_Drink_askForReceipt_Speculative Generality
+Java,Drink,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,Java_Drink_anotherUnusedMethod_Dead Code
+Java,Drink,17,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method,Java_Drink_yetAnotherUnusedMethod_Dead Code
+Java,Drink,18,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,Java_Drink_duplicateMethod_Duplicate Code
+Java,Drink,19,Couplers,Message Chains,chainOfMethods,"Excessive method chaining (`this.updateCustomerAddress(""456 Avenue"")`)",Java_Drink_chainOfMethods_Message Chains
+Java,Drink,20,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,Java_Drink_middlemanMethod_Middle Man
+Java,Drink,21,Couplers,Inappropriate Intimacy,accessInternalDetails,Accesses internal attributes (`this.drinkType`),Java_Drink_accessInternalDetails_Inappropriate Intimacy
+Java,Drink,22,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",Java_Drink_longMethod_Long Method
+Java,Customer,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: ordering, complaints, contact updates, notifications, and discounts",Java_Customer_Entire Class_Large Class
+Java,Customer,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`boolean`) for `frequentCustomerDiscount` instead of a more expressive construct,Java_Customer___init___Primitive Obsession
+Java,Customer,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",Java_Customer___init___Data Clumps
+Java,Customer,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,Java_Customer_handleComplaint_Switch Statements
+Java,Customer,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,Java_Customer_updateContactInfo_Shotgun Surgery
+Java,Customer,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,Java_Customer_updateName_Shotgun Surgery
+Java,Customer,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",Java_Customer_updateAddress_Shotgun Surgery
+Java,Customer,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,Java_Customer_updatePhoneNumber_Shotgun Surgery
+Java,Customer,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,Java_Customer_updateEmail_Shotgun Surgery
+Java,Customer,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,Java_Customer_notifyForPromotion_Divergent Change
+Java,Customer,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",Java_Customer_notifyForDiscount_Divergent Change
+Java,Customer,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,Java_Customer_notifyForNewArrivals_Divergent Change
+Java,Customer,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,Java_Customer_applyDiscount_Parallel Inheritance Hierarchies
+Java,Customer,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,Java_Customer_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+Java,Customer,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,Java_Customer_askForReceipt_Speculative Generality
+Java,Customer,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,Java_Customer_anotherUnusedMethod_Dead Code
+Java,Customer,17,Couplers,Feature Envy,orderPizza,Excessive reliance on another class (`pizzaShop`) for core functionality,Java_Customer_orderPizza_Feature Envy
+Java,Customer,18,Couplers,Inappropriate Intimacy,complain,Accessing another object's internal details (`pizzaShop.getCashier().calmCustomerDown()`),Java_Customer_complain_Inappropriate Intimacy
+Java,Customer,19,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`pizzaShop.getCashier().getChef().cleanKitchen()`),Java_Customer_chainOfMethods_Message Chains
+Java,Customer,20,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,Java_Customer_middlemanMethod_Middle Man
+Java,Customer,21,Bloaters,Long Method,longComplaintMethod,"Performs multiple actions in a single method, reducing readability",Java_Customer_longComplaintMethod_Long Method
+Java,Customer,22,Dispensables,Duplicate Code,duplicateComplaint,Repeated functionality with identical operations on the same attribute,Java_Customer_duplicateComplaint_Duplicate Code
+Java,Chef,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: baking, delivering, cleaning, notifications, complaints, and discounts",Java_Chef_Entire Class_Large Class
+Java,Chef,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`boolean`) for `extraCheese` instead of a more expressive construct,Java_Chef___init___Primitive Obsession
+Java,Chef,3,Bloaters,Data Clumps,__init__,"Grouped chef details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",Java_Chef___init___Data Clumps
+Java,Chef,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,Java_Chef_handleComplaint_Switch Statements
+Java,Chef,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,Java_Chef_updateContactInfo_Shotgun Surgery
+Java,Chef,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,Java_Chef_updateName_Shotgun Surgery
+Java,Chef,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",Java_Chef_updateAddress_Shotgun Surgery
+Java,Chef,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,Java_Chef_updatePhoneNumber_Shotgun Surgery
+Java,Chef,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,Java_Chef_updateEmail_Shotgun Surgery
+Java,Chef,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,Java_Chef_notifyForPromotion_Divergent Change
+Java,Chef,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",Java_Chef_notifyForDiscount_Divergent Change
+Java,Chef,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,Java_Chef_notifyForNewArrivals_Divergent Change
+Java,Chef,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,Java_Chef_applyDiscount_Parallel Inheritance Hierarchies
+Java,Chef,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,Java_Chef_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+Java,Chef,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,Java_Chef_askForReceipt_Speculative Generality
+Java,Chef,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,Java_Chef_anotherUnusedMethod_Dead Code
+Java,Chef,17,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing internal attributes (`this.pizza.getTopping()`),Java_Chef_accessInternalDetails_Inappropriate Intimacy
+Java,Chef,18,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`this.cleanKitchen()`),Java_Chef_chainOfMethods_Message Chains
+Java,Chef,19,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,Java_Chef_middlemanMethod_Middle Man
+Java,Chef,20,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",Java_Chef_longMethod_Long Method
+Java,Chef,21,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,Java_Chef_duplicateMethod_Duplicate Code
+Java,Cashier,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order taking, complaints, discounts, customer contact, and deliveries",Java_Cashier_Entire Class_Large Class
+Java,Cashier,2,Bloaters,Primitive Obsession,__init__,Using a primitive (`boolean`) for `frequentCustomerDiscount` instead of a more expressive construct,Java_Cashier___init___Primitive Obsession
+Java,Cashier,3,Bloaters,Data Clumps,__init__,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",Java_Cashier___init___Data Clumps
+Java,Cashier,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,Java_Cashier_handleComplaint_Switch Statements
+Java,Cashier,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,Java_Cashier_updateContactInfo_Shotgun Surgery
+Java,Cashier,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,Java_Cashier_updateName_Shotgun Surgery
+Java,Cashier,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",Java_Cashier_updateAddress_Shotgun Surgery
+Java,Cashier,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,Java_Cashier_updatePhoneNumber_Shotgun Surgery
+Java,Cashier,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,Java_Cashier_updateEmail_Shotgun Surgery
+Java,Cashier,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,Java_Cashier_notifyForPromotion_Divergent Change
+Java,Cashier,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",Java_Cashier_notifyForDiscount_Divergent Change
+Java,Cashier,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,Java_Cashier_notifyForNewArrivals_Divergent Change
+Java,Cashier,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,Java_Cashier_applyDiscount_Parallel Inheritance Hierarchies
+Java,Cashier,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,Java_Cashier_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+Java,Cashier,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,Java_Cashier_askForReceipt_Speculative Generality
+Java,Cashier,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,Java_Cashier_anotherUnusedMethod_Dead Code
+Java,Cashier,17,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing internal attributes (`chef.isBusy()`),Java_Cashier_accessInternalDetails_Inappropriate Intimacy
+Java,Cashier,18,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`this.chef.cleanKitchen()`),Java_Cashier_chainOfMethods_Message Chains
+Java,Cashier,19,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,Java_Cashier_middlemanMethod_Middle Man
+Java,Cashier,20,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",Java_Cashier_longMethod_Long Method
+Java,Cashier,21,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,Java_Cashier_duplicateMethod_Duplicate Code
+JavaScript,Shop,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order processing, customer contact updates, notifications, and discounts",JavaScript_Shop_Entire Class_Large Class
+JavaScript,Shop,2,Bloaters,Primitive Obsession,constructor,Using a primitive (`boolean`) for `frequentCustomerDiscount` instead of a more expressive construct,JavaScript_Shop_constructor_Primitive Obsession
+JavaScript,Shop,3,Bloaters,Data Clumps,constructor,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",JavaScript_Shop_constructor_Data Clumps
+JavaScript,Shop,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,JavaScript_Shop_handleComplaint_Switch Statements
+JavaScript,Shop,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,JavaScript_Shop_updateContactInfo_Shotgun Surgery
+JavaScript,Shop,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,JavaScript_Shop_updateName_Shotgun Surgery
+JavaScript,Shop,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",JavaScript_Shop_updateAddress_Shotgun Surgery
+JavaScript,Shop,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,JavaScript_Shop_updatePhoneNumber_Shotgun Surgery
+JavaScript,Shop,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,JavaScript_Shop_updateEmail_Shotgun Surgery
+JavaScript,Shop,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,JavaScript_Shop_notifyForPromotion_Divergent Change
+JavaScript,Shop,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",JavaScript_Shop_notifyForDiscount_Divergent Change
+JavaScript,Shop,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,JavaScript_Shop_notifyForNewArrivals_Divergent Change
+JavaScript,Shop,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,JavaScript_Shop_applyDiscount_Parallel Inheritance Hierarchies
+JavaScript,Shop,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,JavaScript_Shop_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+JavaScript,Shop,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,JavaScript_Shop_askForReceipt_Speculative Generality
+JavaScript,Shop,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,JavaScript_Shop_anotherUnusedMethod_Dead Code
+JavaScript,Shop,17,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method,JavaScript_Shop_yetAnotherUnusedMethod_Dead Code
+JavaScript,Shop,18,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`this.casher.chef.cleanKitchen()`),JavaScript_Shop_chainOfMethods_Message Chains
+JavaScript,Shop,19,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,JavaScript_Shop_middlemanMethod_Middle Man
+JavaScript,Shop,20,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing internal attributes (`this.casher.chef.busy`),JavaScript_Shop_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Shop,21,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",JavaScript_Shop_longMethod_Long Method
+JavaScript,Shop,22,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,Method receives multiple unrelated parameters,JavaScript_Shop_orderWithUnnecessaryDetails_Long Parameter List
+JavaScript,Pizza,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: pizza properties, customer info, notifications, and complaints",JavaScript_Pizza_Entire Class_Large Class
+JavaScript,Pizza,2,Bloaters,Primitive Obsession,constructor,Using a primitive (`boolean`) for `extraCheese` instead of a more expressive construct,JavaScript_Pizza_constructor_Primitive Obsession
+JavaScript,Pizza,3,Bloaters,Data Clumps,constructor,"Grouped customer details (`customerFirstName`, `customerLastName`, `customerAddress`, etc.) should be encapsulated",JavaScript_Pizza_constructor_Data Clumps
+JavaScript,Pizza,4,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Method receives multiple unrelated parameters (`pizzaType`, `size`, `crustType`, etc.)",JavaScript_Pizza_orderWithUnnecessaryDetails_Long Parameter List
+JavaScript,Pizza,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,JavaScript_Pizza_handleComplaint_Switch Statements
+JavaScript,Pizza,6,Object-Orientation Abusers,Temporary Field,constructor,"Fields (`tempDiscountCode`, `tempOrderNote`) used only under specific conditions",JavaScript_Pizza_constructor_Temporary Field
+JavaScript,Pizza,7,Change Preventers,Shotgun Surgery,updateCustomerInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,JavaScript_Pizza_updateCustomerInfo_Shotgun Surgery
+JavaScript,Pizza,8,Change Preventers,Shotgun Surgery,updateCustomerName,Splitting name updates across different methods instead of a single encapsulated update,JavaScript_Pizza_updateCustomerName_Shotgun Surgery
+JavaScript,Pizza,9,Change Preventers,Shotgun Surgery,updateCustomerAddress,"Similar to `updateCustomerName`, updates should be encapsulated",JavaScript_Pizza_updateCustomerAddress_Shotgun Surgery
+JavaScript,Pizza,10,Change Preventers,Shotgun Surgery,updateCustomerPhoneNumber,Separate field update that contributes to shotgun surgery,JavaScript_Pizza_updateCustomerPhoneNumber_Shotgun Surgery
+JavaScript,Pizza,11,Change Preventers,Shotgun Surgery,updateCustomerEmail,Separate field update that contributes to shotgun surgery,JavaScript_Pizza_updateCustomerEmail_Shotgun Surgery
+JavaScript,Pizza,12,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,JavaScript_Pizza_notifyForPromotion_Divergent Change
+JavaScript,Pizza,13,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",JavaScript_Pizza_notifyForDiscount_Divergent Change
+JavaScript,Pizza,14,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,JavaScript_Pizza_notifyForNewArrivals_Divergent Change
+JavaScript,Pizza,15,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,JavaScript_Pizza_applyDiscount_Parallel Inheritance Hierarchies
+JavaScript,Pizza,16,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,JavaScript_Pizza_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+JavaScript,Pizza,17,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,JavaScript_Pizza_askForReceipt_Speculative Generality
+JavaScript,Pizza,18,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,JavaScript_Pizza_anotherUnusedMethod_Dead Code
+JavaScript,Pizza,19,Dispensables,Dead Code,yetAnotherUnusedMethod,Another unused method,JavaScript_Pizza_yetAnotherUnusedMethod_Dead Code
+JavaScript,Pizza,20,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,JavaScript_Pizza_duplicateMethod_Duplicate Code
+JavaScript,Pizza,21,Couplers,Message Chains,chainOfMethods,"Excessive method chaining (`this.updateCustomerAddress(""123 Street"")`)",JavaScript_Pizza_chainOfMethods_Message Chains
+JavaScript,Pizza,22,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,JavaScript_Pizza_middlemanMethod_Middle Man
+JavaScript,Pizza,23,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing internal attributes (`this.size`, `this.doughType`, `this.topping`)",JavaScript_Pizza_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Pizza,24,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",JavaScript_Pizza_longMethod_Long Method
+JavaScript,CheesePizza,25,Object-Orientation Abusers,Refused Bequest,constructor,Subclass inherits but does not use `cheeseType`,JavaScript_CheesePizza_constructor_Refused Bequest
+JavaScript,CheesePizza,26,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,JavaScript_CheesePizza_handleComplaint_Switch Statements
+JavaScript,Drink,1,Dispensables,Data Class,Entire Class,Class only stores data (`drinkType`) without meaningful behavior,JavaScript_Drink_Entire Class_Data Class
+JavaScript,Drink,2,Bloaters,Primitive Obsession,createOrder,Uses a primitive (`string`) instead of a more expressive object for drink type,JavaScript_Drink_createOrder_Primitive Obsession
+JavaScript,Drink,3,Bloaters,Primitive Obsession,addToOrder,Uses a primitive (`string`) instead of an object for order processing,JavaScript_Drink_addToOrder_Primitive Obsession
+JavaScript,Drink,4,Bloaters,Primitive Obsession,confirmOrder,Uses a primitive (`string`) instead of an object for order confirmation,JavaScript_Drink_confirmOrder_Primitive Obsession
+JavaScript,Customer,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: ordering, complaints, contact updates, notifications, and discounts",JavaScript_Customer_Entire Class_Large Class
+JavaScript,Customer,2,Bloaters,Primitive Obsession,constructor,Using a primitive (`boolean`) for `frequentCustomerDiscount` instead of a more expressive construct,JavaScript_Customer_constructor_Primitive Obsession
+JavaScript,Customer,3,Bloaters,Data Clumps,constructor,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",JavaScript_Customer_constructor_Data Clumps
+JavaScript,Customer,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,JavaScript_Customer_handleComplaint_Switch Statements
+JavaScript,Customer,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,JavaScript_Customer_updateContactInfo_Shotgun Surgery
+JavaScript,Customer,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,JavaScript_Customer_updateName_Shotgun Surgery
+JavaScript,Customer,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",JavaScript_Customer_updateAddress_Shotgun Surgery
+JavaScript,Customer,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,JavaScript_Customer_updatePhoneNumber_Shotgun Surgery
+JavaScript,Customer,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,JavaScript_Customer_updateEmail_Shotgun Surgery
+JavaScript,Customer,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,JavaScript_Customer_notifyForPromotion_Divergent Change
+JavaScript,Customer,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",JavaScript_Customer_notifyForDiscount_Divergent Change
+JavaScript,Customer,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,JavaScript_Customer_notifyForNewArrivals_Divergent Change
+JavaScript,Customer,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,JavaScript_Customer_applyDiscount_Parallel Inheritance Hierarchies
+JavaScript,Customer,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,JavaScript_Customer_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+JavaScript,Customer,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,JavaScript_Customer_askForReceipt_Speculative Generality
+JavaScript,Customer,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,JavaScript_Customer_anotherUnusedMethod_Dead Code
+JavaScript,Customer,17,Couplers,Feature Envy,orderPizza,Excessive reliance on another class (`Shop`) for core functionality,JavaScript_Customer_orderPizza_Feature Envy
+JavaScript,Customer,18,Couplers,Inappropriate Intimacy,complain,Accessing another object's internal details (`Shop.casher.cleanKitchen()`),JavaScript_Customer_complain_Inappropriate Intimacy
+JavaScript,Customer,19,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`Shop.casher.chef.cleanKitchen()`),JavaScript_Customer_chainOfMethods_Message Chains
+JavaScript,Customer,20,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,JavaScript_Customer_middlemanMethod_Middle Man
+JavaScript,Customer,21,Bloaters,Long Method,longComplaintMethod,"Performs multiple actions in a single method, reducing readability",JavaScript_Customer_longComplaintMethod_Long Method
+JavaScript,Customer,22,Dispensables,Duplicate Code,duplicateComplaint,Repeated functionality with identical operations on the same attribute,JavaScript_Customer_duplicateComplaint_Duplicate Code
+JavaScript,Chef,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: baking, delivering, cleaning, notifications, complaints, and discounts",JavaScript_Chef_Entire Class_Large Class
+JavaScript,Chef,2,Bloaters,Primitive Obsession,constructor,Using a primitive (`boolean`) for `frequentCustomerDiscount` instead of a more expressive construct,JavaScript_Chef_constructor_Primitive Obsession
+JavaScript,Chef,3,Bloaters,Data Clumps,constructor,"Grouped chef details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",JavaScript_Chef_constructor_Data Clumps
+JavaScript,Chef,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,JavaScript_Chef_handleComplaint_Switch Statements
+JavaScript,Chef,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,JavaScript_Chef_updateContactInfo_Shotgun Surgery
+JavaScript,Chef,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,JavaScript_Chef_updateName_Shotgun Surgery
+JavaScript,Chef,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",JavaScript_Chef_updateAddress_Shotgun Surgery
+JavaScript,Chef,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,JavaScript_Chef_updatePhoneNumber_Shotgun Surgery
+JavaScript,Chef,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,JavaScript_Chef_updateEmail_Shotgun Surgery
+JavaScript,Chef,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,JavaScript_Chef_notifyForPromotion_Divergent Change
+JavaScript,Chef,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",JavaScript_Chef_notifyForDiscount_Divergent Change
+JavaScript,Chef,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,JavaScript_Chef_notifyForNewArrivals_Divergent Change
+JavaScript,Chef,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,JavaScript_Chef_applyDiscount_Parallel Inheritance Hierarchies
+JavaScript,Chef,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,JavaScript_Chef_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+JavaScript,Chef,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,JavaScript_Chef_askForReceipt_Speculative Generality
+JavaScript,Chef,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,JavaScript_Chef_anotherUnusedMethod_Dead Code
+JavaScript,Chef,17,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing internal attributes (`this.pizza`),JavaScript_Chef_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Chef,18,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`this.cleanKitchen()`),JavaScript_Chef_chainOfMethods_Message Chains
+JavaScript,Chef,19,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,JavaScript_Chef_middlemanMethod_Middle Man
+JavaScript,Chef,20,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",JavaScript_Chef_longMethod_Long Method
+JavaScript,Chef,21,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,JavaScript_Chef_duplicateMethod_Duplicate Code
+JavaScript,Cashier,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order taking, complaints, discounts, customer contact, and deliveries",JavaScript_Cashier_Entire Class_Large Class
+JavaScript,Cashier,2,Bloaters,Primitive Obsession,constructor,Using a primitive (`boolean`) for `frequentCustomerDiscount` instead of a more expressive construct,JavaScript_Cashier_constructor_Primitive Obsession
+JavaScript,Cashier,3,Bloaters,Data Clumps,constructor,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",JavaScript_Cashier_constructor_Data Clumps
+JavaScript,Cashier,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,JavaScript_Cashier_handleComplaint_Switch Statements
+JavaScript,Cashier,5,Change Preventers,Shotgun Surgery,updateContactInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,JavaScript_Cashier_updateContactInfo_Shotgun Surgery
+JavaScript,Cashier,6,Change Preventers,Shotgun Surgery,updateName,Splitting name updates across different methods instead of a single encapsulated update,JavaScript_Cashier_updateName_Shotgun Surgery
+JavaScript,Cashier,7,Change Preventers,Shotgun Surgery,updateAddress,"Similar to `updateName`, updates should be encapsulated",JavaScript_Cashier_updateAddress_Shotgun Surgery
+JavaScript,Cashier,8,Change Preventers,Shotgun Surgery,updatePhoneNumber,Separate field update that contributes to shotgun surgery,JavaScript_Cashier_updatePhoneNumber_Shotgun Surgery
+JavaScript,Cashier,9,Change Preventers,Shotgun Surgery,updateEmail,Separate field update that contributes to shotgun surgery,JavaScript_Cashier_updateEmail_Shotgun Surgery
+JavaScript,Cashier,10,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,JavaScript_Cashier_notifyForPromotion_Divergent Change
+JavaScript,Cashier,11,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",JavaScript_Cashier_notifyForDiscount_Divergent Change
+JavaScript,Cashier,12,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,JavaScript_Cashier_notifyForNewArrivals_Divergent Change
+JavaScript,Cashier,13,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,JavaScript_Cashier_applyDiscount_Parallel Inheritance Hierarchies
+JavaScript,Cashier,14,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,JavaScript_Cashier_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+JavaScript,Cashier,15,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,JavaScript_Cashier_askForReceipt_Speculative Generality
+JavaScript,Cashier,16,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,JavaScript_Cashier_anotherUnusedMethod_Dead Code
+JavaScript,Cashier,17,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing internal attributes (`this.chef.busy`),JavaScript_Cashier_accessInternalDetails_Inappropriate Intimacy
+JavaScript,Cashier,18,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`this.chef.cleanKitchen()`),JavaScript_Cashier_chainOfMethods_Message Chains
+JavaScript,Cashier,19,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,JavaScript_Cashier_middlemanMethod_Middle Man
+JavaScript,Cashier,20,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",JavaScript_Cashier_longMethod_Long Method
+JavaScript,Cashier,21,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,JavaScript_Cashier_duplicateMethod_Duplicate Code
+C++,Shop,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order processing, cashier interactions, and pizza creation",C++_Shop_Entire Class_Large Class
+C++,Shop,2,Object-Orientation Abusers,Switch Statements,createPizza,Overuse of if-else statements to create different pizza types,C++_Shop_createPizza_Switch Statements
+C++,Shop,3,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing internal attributes of `Cashier` (`cashier->getChef()->isBusy()`),C++_Shop_accessInternalDetails_Inappropriate Intimacy
+C++,Shop,4,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,C++_Shop_notifyForPromotion_Divergent Change
+C++,Shop,5,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",C++_Shop_notifyForDiscount_Divergent Change
+C++,Shop,6,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,C++_Shop_notifyForNewArrivals_Divergent Change
+C++,Shop,7,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,C++_Shop_applyDiscount_Parallel Inheritance Hierarchies
+C++,Shop,8,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,C++_Shop_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+C++,Shop,9,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,C++_Shop_askForReceipt_Speculative Generality
+C++,Shop,10,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,C++_Shop_anotherUnusedMethod_Dead Code
+C++,Shop,11,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`cashier->getChef()->cleanKitchen()`),C++_Shop_chainOfMethods_Message Chains
+C++,Shop,12,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,C++_Shop_middlemanMethod_Middle Man
+C++,Shop,13,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",C++_Shop_longMethod_Long Method
+C++,Shop,14,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,Method receives multiple unrelated parameters,C++_Shop_orderWithUnnecessaryDetails_Long Parameter List
+C++,Pizza,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: pizza properties, customer info, notifications, and complaints",C++_Pizza_Entire Class_Large Class
+C++,Pizza,2,Bloaters,Primitive Obsession,Constructor,Using a primitive (`bool`) for `extraCheese` instead of a more expressive construct,C++_Pizza_Constructor_Primitive Obsession
+C++,Pizza,3,Bloaters,Data Clumps,Constructor,"Grouped customer details (`customerFirstName`, `customerLastName`, `customerAddress`, etc.) should be encapsulated",C++_Pizza_Constructor_Data Clumps
+C++,Pizza,4,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Method receives multiple unrelated parameters (`pizzaType`, `size`, `crustType`, etc.)",C++_Pizza_orderWithUnnecessaryDetails_Long Parameter List
+C++,Pizza,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,C++_Pizza_handleComplaint_Switch Statements
+C++,Pizza,6,Object-Orientation Abusers,Temporary Field,Constructor,"Fields (`tempDiscountCode`, `tempOrderNote`) used only under specific conditions",C++_Pizza_Constructor_Temporary Field
+C++,Pizza,7,Change Preventers,Shotgun Surgery,updateCustomerInfo,Multiple update methods modifying individual fields instead of a single encapsulated update,C++_Pizza_updateCustomerInfo_Shotgun Surgery
+C++,Pizza,8,Change Preventers,Shotgun Surgery,updateCustomerName,Splitting name updates across different methods instead of a single encapsulated update,C++_Pizza_updateCustomerName_Shotgun Surgery
+C++,Pizza,9,Change Preventers,Shotgun Surgery,updateCustomerAddress,"Similar to `updateCustomerName`, updates should be encapsulated",C++_Pizza_updateCustomerAddress_Shotgun Surgery
+C++,Pizza,10,Change Preventers,Shotgun Surgery,updateCustomerPhoneNumber,Separate field update that contributes to shotgun surgery,C++_Pizza_updateCustomerPhoneNumber_Shotgun Surgery
+C++,Pizza,11,Change Preventers,Shotgun Surgery,updateCustomerEmail,Separate field update that contributes to shotgun surgery,C++_Pizza_updateCustomerEmail_Shotgun Surgery
+C++,Pizza,12,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,C++_Pizza_notifyForPromotion_Divergent Change
+C++,Pizza,13,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",C++_Pizza_notifyForDiscount_Divergent Change
+C++,Pizza,14,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,C++_Pizza_notifyForNewArrivals_Divergent Change
+C++,Pizza,15,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,C++_Pizza_applyDiscount_Parallel Inheritance Hierarchies
+C++,Pizza,16,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,C++_Pizza_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+C++,Pizza,17,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,C++_Pizza_askForReceipt_Speculative Generality
+C++,Pizza,18,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,C++_Pizza_anotherUnusedMethod_Dead Code
+C++,Pizza,19,Couplers,Message Chains,chainOfMethods,"Excessive method chaining (`updateCustomerAddress(""123 Street"")`)",C++_Pizza_chainOfMethods_Message Chains
+C++,Pizza,20,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,C++_Pizza_middlemanMethod_Middle Man
+C++,Pizza,21,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing internal attributes (`size`, `doughType`, `topping`)",C++_Pizza_accessInternalDetails_Inappropriate Intimacy
+C++,Pizza,22,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",C++_Pizza_longMethod_Long Method
+C++,CheesePizza,23,Object-Orientation Abusers,Refused Bequest,Constructor,Subclass inherits but does not use `cheeseType`,C++_CheesePizza_Constructor_Refused Bequest
+C++,Drink,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: drink properties, customer info, promotions, and complaints",C++_Drink_Entire Class_Large Class
+C++,Drink,2,Bloaters,Primitive Obsession,Constructor,Using primitive (`bool`) for `ice` and `lemon` instead of a more expressive construct,C++_Drink_Constructor_Primitive Obsession
+C++,Drink,3,Bloaters,Data Clumps,Constructor,"Grouped customer details (`customerFirstName`, `customerLastName`, `customerAddress`, etc.) should be encapsulated",C++_Drink_Constructor_Data Clumps
+C++,Drink,4,Bloaters,Long Parameter List,orderWithUnnecessaryDetails,"Method receives multiple unrelated parameters (`drinkType`, `size`, `ice`, `lemon`, `discountCode`)",C++_Drink_orderWithUnnecessaryDetails_Long Parameter List
+C++,Drink,5,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,C++_Drink_handleComplaint_Switch Statements
+C++,Drink,6,Object-Orientation Abusers,Temporary Field,Constructor,"Fields (`tempDiscountCode`, `tempOrderNote`) used only under specific conditions",C++_Drink_Constructor_Temporary Field
+C++,Drink,7,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,C++_Drink_notifyForPromotion_Divergent Change
+C++,Drink,8,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",C++_Drink_notifyForDiscount_Divergent Change
+C++,Drink,9,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,C++_Drink_notifyForNewArrivals_Divergent Change
+C++,Drink,10,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,C++_Drink_applyDiscount_Parallel Inheritance Hierarchies
+C++,Drink,11,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,C++_Drink_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+C++,Drink,12,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,C++_Drink_askForReceipt_Speculative Generality
+C++,Drink,13,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,C++_Drink_anotherUnusedMethod_Dead Code
+C++,Drink,14,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`cleanup()`),C++_Drink_chainOfMethods_Message Chains
+C++,Drink,15,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,C++_Drink_middlemanMethod_Middle Man
+C++,Drink,16,Couplers,Inappropriate Intimacy,accessInternalDetails,"Accessing internal attributes (`size`, `drinkType`)",C++_Drink_accessInternalDetails_Inappropriate Intimacy
+C++,Drink,17,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",C++_Drink_longMethod_Long Method
+C++,Customer,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: ordering, complaints, contact updates, notifications, and discounts",C++_Customer_Entire Class_Large Class
+C++,Customer,2,Bloaters,Primitive Obsession,Constructor,Using a primitive (`bool`) for `frequentCustomerDiscount` instead of a more expressive construct,C++_Customer_Constructor_Primitive Obsession
+C++,Customer,3,Bloaters,Data Clumps,Constructor,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",C++_Customer_Constructor_Data Clumps
+C++,Customer,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,C++_Customer_handleComplaint_Switch Statements
+C++,Customer,5,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,C++_Customer_notifyForPromotion_Divergent Change
+C++,Customer,6,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",C++_Customer_notifyForDiscount_Divergent Change
+C++,Customer,7,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,C++_Customer_notifyForNewArrivals_Divergent Change
+C++,Customer,8,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,C++_Customer_applyDiscount_Parallel Inheritance Hierarchies
+C++,Customer,9,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,C++_Customer_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+C++,Customer,10,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,C++_Customer_askForReceipt_Speculative Generality
+C++,Customer,11,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,C++_Customer_anotherUnusedMethod_Dead Code
+C++,Customer,12,Couplers,Feature Envy,orderPizza,Excessive reliance on another class (`pizzaShop`) for core functionality,C++_Customer_orderPizza_Feature Envy
+C++,Customer,13,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing another object's internal details (`pizzaShop->getCashier()->hurryUpChef()`),C++_Customer_accessInternalDetails_Inappropriate Intimacy
+C++,Customer,14,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`pizzaShop->getCashier()->hurryUpChef()`),C++_Customer_chainOfMethods_Message Chains
+C++,Customer,15,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,C++_Customer_middlemanMethod_Middle Man
+C++,Customer,16,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",C++_Customer_longMethod_Long Method
+C++,Customer,17,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,C++_Customer_duplicateMethod_Duplicate Code
+C++,Chef,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: baking, delivering, cleaning, notifications, complaints, and discounts",C++_Chef_Entire Class_Large Class
+C++,Chef,2,Bloaters,Primitive Obsession,Constructor,Using a primitive (`bool`) for `extraCheese` instead of a more expressive construct,C++_Chef_Constructor_Primitive Obsession
+C++,Chef,3,Bloaters,Data Clumps,Constructor,"Grouped chef details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",C++_Chef_Constructor_Data Clumps
+C++,Chef,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,C++_Chef_handleComplaint_Switch Statements
+C++,Chef,5,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,C++_Chef_notifyForPromotion_Divergent Change
+C++,Chef,6,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",C++_Chef_notifyForDiscount_Divergent Change
+C++,Chef,7,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,C++_Chef_notifyForNewArrivals_Divergent Change
+C++,Chef,8,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,C++_Chef_applyDiscount_Parallel Inheritance Hierarchies
+C++,Chef,9,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,C++_Chef_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+C++,Chef,10,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,C++_Chef_askForReceipt_Speculative Generality
+C++,Chef,11,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,C++_Chef_anotherUnusedMethod_Dead Code
+C++,Chef,12,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing another object's internal details (`this->pizza->getTopping()`),C++_Chef_accessInternalDetails_Inappropriate Intimacy
+C++,Chef,13,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`cleanKitchen()`),C++_Chef_chainOfMethods_Message Chains
+C++,Chef,14,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,C++_Chef_middlemanMethod_Middle Man
+C++,Chef,15,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",C++_Chef_longMethod_Long Method
+C++,Chef,16,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,C++_Chef_duplicateMethod_Duplicate Code
+C++,Cashier,1,Bloaters,Large Class,Entire Class,"The class handles multiple responsibilities: order taking, complaints, discounts, customer contact, and deliveries",C++_Cashier_Entire Class_Large Class
+C++,Cashier,2,Bloaters,Primitive Obsession,Constructor,Using a primitive (`bool`) for `frequentCustomerDiscount` instead of a more expressive construct,C++_Cashier_Constructor_Primitive Obsession
+C++,Cashier,3,Bloaters,Data Clumps,Constructor,"Grouped customer details (`firstName`, `lastName`, `address`, `phoneNumber`, `email`) should be encapsulated",C++_Cashier_Constructor_Data Clumps
+C++,Cashier,4,Object-Orientation Abusers,Switch Statements,handleComplaint,Overuse of if-else statements to handle different complaints,C++_Cashier_handleComplaint_Switch Statements
+C++,Cashier,5,Change Preventers,Divergent Change,notifyForPromotion,Multiple notification methods each handling separate concerns,C++_Cashier_notifyForPromotion_Divergent Change
+C++,Cashier,6,Change Preventers,Divergent Change,notifyForDiscount,"Related to `notifyForPromotion`, but managed separately",C++_Cashier_notifyForDiscount_Divergent Change
+C++,Cashier,7,Change Preventers,Divergent Change,notifyForNewArrivals,Another notification method that should be unified,C++_Cashier_notifyForNewArrivals_Divergent Change
+C++,Cashier,8,Change Preventers,Parallel Inheritance Hierarchies,applyDiscount,Parallel implementation of discount and loyalty points logic,C++_Cashier_applyDiscount_Parallel Inheritance Hierarchies
+C++,Cashier,9,Change Preventers,Parallel Inheritance Hierarchies,applyLoyaltyPoints,Another parallel logic similar to `applyDiscount`,C++_Cashier_applyLoyaltyPoints_Parallel Inheritance Hierarchies
+C++,Cashier,10,Dispensables,Speculative Generality,askForReceipt,Method is present but never used in any flow,C++_Cashier_askForReceipt_Speculative Generality
+C++,Cashier,11,Dispensables,Dead Code,anotherUnusedMethod,Unused method that can be removed,C++_Cashier_anotherUnusedMethod_Dead Code
+C++,Cashier,12,Couplers,Inappropriate Intimacy,accessInternalDetails,Accessing internal attributes (`chef->isBusy()`),C++_Cashier_accessInternalDetails_Inappropriate Intimacy
+C++,Cashier,13,Couplers,Message Chains,chainOfMethods,Excessive method chaining (`accessInternalDetails()`),C++_Cashier_chainOfMethods_Message Chains
+C++,Cashier,14,Couplers,Middle Man,middlemanMethod,Delegates work without adding value,C++_Cashier_middlemanMethod_Middle Man
+C++,Cashier,15,Bloaters,Long Method,longMethod,"Performs multiple actions in a single method, reducing readability",C++_Cashier_longMethod_Long Method
+C++,Cashier,16,Dispensables,Duplicate Code,duplicateMethod,Repeated functionality with identical operations on the same attribute,C++_Cashier_duplicateMethod_Duplicate Code

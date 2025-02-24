@@ -1,0 +1,32 @@
+/'
+Copyright (c) 2025 Ahmed R. Sadik, Honda Research Institute Europe GmbH
+
+This source code is licensed under the MIT License found in the
+LICENSE file in the root directory of this source tree. This dataset contains smelly code for research and refactoring purposes.
+'/
+
+@startuml
+left to right direction
+:Pizza:
+:Chef:
+:Casher:
+:Customer:
+
+:Customer: --> (Place Order)
+:Customer: --> (Complain)
+:Casher: --> (Order Pizza)
+:Casher: --> (Hurry Up Chef)
+:Casher: --> (Calm Down Customer)
+:Chef: --> (Deliver Pizza)
+:Chef: --> (Bake Pizza)
+:Chef: --> (Cut and Box Pizza)
+:Pizza: --> (Set Size)
+:Pizza: --> (Set Dough Type)
+:Pizza: --> (Set Toppings)
+
+@enduml
+
+
+
+
+

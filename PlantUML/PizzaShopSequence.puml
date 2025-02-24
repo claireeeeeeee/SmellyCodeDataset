@@ -1,0 +1,26 @@
+/'
+Copyright (c) 2025 Ahmed R. Sadik, Honda Research Institute Europe GmbH
+
+This source code is licensed under the MIT License found in the
+LICENSE file in the root directory of this source tree. This dataset contains smelly code for research and refactoring purposes.
+'/
+
+@startuml
+actor Customer
+participant Casher
+participant Chef
+participant Pizza
+
+Customer -> Casher: Place order
+Casher -> Chef: Order pizza
+Chef -> Pizza: Bake pizza
+Customer -> Casher: Complain
+Casher -> Chef: Hurry up
+Chef -> Casher: Acknowledge hurry up
+Casher -> Customer: Calm down
+Chef -> Pizza: Cut pizza and put in box
+Chef -> Customer: Deliver pizza
+
+@enduml
+
+
