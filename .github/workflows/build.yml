@@ -36,6 +36,10 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           projectBaseDir: .
+          args: >
+            -Dsonar.projectKey=claireeeeeeee_SmellyCodeDataset
+            -Dsonar.organization=claireeeeeeee
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
