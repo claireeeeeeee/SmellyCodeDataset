@@ -39,7 +39,10 @@ jobs:
           args: >
             -Dsonar.projectKey=claireeeeeeee_SmellyCodeDataset
             -Dsonar.organization=claireeeeeeee
+            -Dsonar.sources=python
+            -Dsonar.exclusions=**/*.java
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
 
