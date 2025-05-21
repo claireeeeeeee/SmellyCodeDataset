@@ -20,10 +20,16 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt || true  # 没有 requirements.txt 不会报错
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
@@ -31,6 +37,11 @@ jobs:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+
+      - name: Install Python dependencies (optional)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || true
 
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@v2
@@ -40,7 +51,7 @@ jobs:
             -Dsonar.projectKey=claireeeeeeee_SmellyCodeDataset
             -Dsonar.organization=claireeeeeeee
             -Dsonar.sources=Python,Java,C++,JavaScript
-            -Dsonar.exclusions=**/*.md
+            -Dsonar.inclusions=**/*.py,**/*.java,**/*.cpp,**/*.js
+            -Dsonar.exclusions=**/__pycache__/**,**/*.md,**/tests/**,**/*.txt
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
