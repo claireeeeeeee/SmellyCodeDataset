@@ -51,7 +51,7 @@ jobs:
             -Dsonar.projectKey=claireeeeeeee_SmellyCodeDataset
             -Dsonar.organization=claireeeeeeee
             -Dsonar.sources=Python,Java,C++,JavaScript
-            -Dsonar.java.binaries=Java/SmellyUnannotated
+            -Dsonar.java.binaries=Java
             -Dsonar.inclusions=**/*.py,**/*.java,**/*.cpp,**/*.js
             -Dsonar.exclusions=**/__pycache__/**,**/*.md,**/tests/**,**/*.txt
         env:
